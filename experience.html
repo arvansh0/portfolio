@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Experience - VANSH PORTFOLIO</title>
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+    <style>
+        .experience-spotlight {
+            max-width: 1400px;
+            margin: 100px auto 0 auto;
+            padding: 0 40px 20px 40px;
+        }
+        .experience-spotlights {
+            max-width: 1400px;
+            margin: 10px auto 0 auto;
+            padding: 20px 40px 40px 40px;
+            background: #f8f8f8;
+            border-top: 1px solid #eceff3;
+        }
+        .spotlight-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .spotlight-card {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            align-items: center;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(44,62,80,0.08);
+            padding: 22px;
+            border: 1px solid #eef2f7;
+            transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+        }
+        .spotlight-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(44,62,80,0.12);
+            border-color: #e5eaf1;
+        }
+
+        .spotlight-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin: 0 0 8px 0;
+            color: #1f2937;
+        }
+
+        .spotlight-content p {
+            margin: 0 0 16px 0;
+            color: #4b5563;
+        }
+
+        .spotlight-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .spotlight-actions a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            background: #ffffff;
+            color: #111827;
+            text-decoration: none;
+            transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+        }
+
+        .spotlight-actions a:hover {
+            transform: translateY(-2px);
+            border-color: #d1d5db;
+            box-shadow: 0 8px 18px rgba(17,24,39,0.08);
+        }
+
+        /* Media removed to avoid duplicating certificate preview */
+
+        @media (max-width: 900px) {
+            .experience-spotlight {
+                padding: 0 20px 10px 20px;
+            }
+            .experience-spotlights {
+                padding: 0 20px 20px 20px;
+            }
+            .spotlight-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+        .gallery-container {
+            max-width: 1400px;
+            min-height: 100vh;
+            margin: 100px auto 0 auto;
+            padding: 20px 40px 40px 40px;
+            background: #f8f8f8;
+        }
+
+        .gallery-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .gallery-container::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 36px;
+            padding: 10px 0 30px 0;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            transition: all 0.3s;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 28px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(44,62,80,0.10), 0 1.5px 6px rgba(44,62,80,0.08);
+            background: #fff;
+            border: none;
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            max-width: 900px;
+            max-height: 700px;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            border-radius: 18px;
+            box-shadow: none;
+            background: #f5f5f5;
+            transition: transform 0.35s cubic-bezier(.4,0,.2,1), filter 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.035) translateY(-6px) rotate(-1deg);
+            box-shadow: 0 16px 40px rgba(44,62,80,0.16), 0 2px 8px rgba(44,62,80,0.10);
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+        }
+
+        .lightbox-image {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.3s ease;
+        }
+
+        .lightbox.active .lightbox-image {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 1002;
+        }
+
+        .close-lightbox:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-image {
+            left: 20px;
+        }
+
+        .next-image {
+            right: 20px;
+        }
+
+        .image-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 1002;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                min-height: calc(100vh - 250px);
+                margin: 80px auto;
+                padding: 0 20px;
+            }
+
+            .gallery-grid {
+                gap: 30px;
+            }
+
+            .gallery-item {
+                max-height: 400px;
+            }
+
+            .gallery-item img {
+                height: 400px;
+            }
+
+            .lightbox-nav {
+                padding: 15px;
+                font-size: 24px;
+            }
+
+            .close-lightbox {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .gallery-grid {
+                flex-direction: column;
+                gap: 24px;
+                padding: 0 0 20px 0;
+                align-items: center;
+            }
+            .gallery-item img {
+                max-width: 100vw;
+                max-height: 60vw;
+                height: auto;
+            }
+        }
+
+        /* Navigation Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2C3E50;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #000000;
+        }
+
+        .nav-links a.active {
+            color: #000000;
+            font-weight: 600;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 0 60px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            min-width: 200px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .social-links a {
+            color: #2C3E50;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #000000;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: #2C3E50;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        @media (max-width: 1100px) {
+            header {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+
+            .logo {
+                margin: 0 40px;
+                min-width: 180px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            header {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                height: auto;
+            }
+
+            .logo {
+                order: -1;
+                width: 100%;
+                margin: 0 0 10px 0;
+                min-width: unset;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
+                background: white;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .social-links {
+                gap: 15px;
+                margin-top: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                right: 15px;
+                top: 15px;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+                margin: 0;
+                min-width: unset;
+                width: auto;
+            }
+
+            .cv-button, .contact-button {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 8px 10px;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            .social-links {
+                gap: 10px;
+            }
+
+            .cv-button, .contact-button {
+                padding: 6px 10px;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* CV button styles */
+        .cv-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            margin-left: 15px;
+            font-size: 0.9rem;
+            color: #333;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .cv-button:hover {
+            background-color: #f5f5f5;
+            border-color: #d0d0d0;
+            transform: translateY(-1px);
+        }
+
+        .cv-button i {
+            margin-right: 6px;
+            font-size: 0.9rem;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            margin-left: 15px;
+            font-size: 0.9rem;
+            color: #333;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-button:hover {
+            background-color: #f5f5f5;
+            border-color: #d0d0d0;
+            transform: translateY(-1px);
+        }
+
+        .contact-button i {
+            margin-right: 6px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .logo {
+                order: -1;
+                width: 100%;
+                margin: 0 0 10px 0;
+                min-width: unset; /* Remove minimum width on mobile */
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: #2C3E50;
+            transition: all 0.3s ease;
+        }
+
+        .nav-mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            padding: calc(80px + 2rem) 2rem 2rem;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .nav-mobile.active {
+            display: block;
+        }
+
+        .nav-mobile .nav-links,
+        .nav-mobile .social-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-mobile .nav-links a {
+            font-size: 1.2rem;
+            padding: 0.5rem 0;
+        }
+
+        .nav-mobile .social-links {
+            margin-top: 2rem;
+        }
+
+        .nav-mobile .social-links a {
+            font-size: 1.5rem;
+        }
+
+        /* Menu Toggle Animation */
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .social-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <a href="index.html" class="logo">VANSH PORTFOLIO</a>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Work</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="experience.html" class="active">Experience</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vansh-angiras-828275350" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/vansh_world" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="VANSH%20CV.png" download class="cv-button">
+                <i class="fas fa-download"></i>CV
+            </a>
+            <a href="contact.html" class="contact-button">
+                <i class="fas fa-envelope"></i>Contact
+            </a>
+        </div>
+    </header>
+
+    <nav class="nav-mobile">
+        <ul class="nav-links">
+            <li><a href="index.html">Work</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="experience.html" class="active">Experience</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vansh-angiras-828275350" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/vansh_world" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="VANSH%20CV.png" download class="cv-button">
+                <i class="fas fa-download"></i>CV
+            </a>
+            <a href="contact.html" class="contact-button">
+                <i class="fas fa-envelope"></i>Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="gallery-container">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="EXPERIENCE/1.jpg" alt="Experience Photo 1">
+            </div>
+            <div class="gallery-item">
+                <img src="EXPERIENCE/2.jpg" alt="Experience Photo 2">
+            </div>
+            <div class="gallery-item">
+                <img src="EXPERIENCE/3.png" alt="Experience Photo 3">
+            </div>
+        </div>
+    </div>
+
+    <section class="experience-spotlights" aria-label="Company Experience Highlights">
+        <div class="spotlight-grid">
+            <div class="spotlight-card">
+                <div class="spotlight-content">
+                    <h2>Experience Highlight · IDEATE Design Studio</h2>
+                    <p>
+                        IDEATE is a New Delhi–based practice (est. 2013) spanning architecture, interiors, master planning, landscape and conservation. The studio is known for context‑driven, research‑led work and international collaborations that deliver holistic, standards‑aligned design outcomes.
+                    </p>
+                    <div class="spotlight-actions">
+                        <a href="https://ideatedesignstudio.myportfolio.com/team" target="_blank" rel="noopener" aria-label="View IDEATE Design Studio Team">
+                            <i class="fas fa-users"></i> Team Profile
+                        </a>
+                        <a href="https://www.instagram.com/ideatedesignstudio/?utm_medium=copy_link" target="_blank" rel="noopener" aria-label="Open IDEATE Design Studio Instagram">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="spotlight-card">
+                <div class="spotlight-content">
+                    <h2>Experience Highlight · BBA Architects</h2>
+                    <p>
+                        BBA Architects specialises in high‑quality interiors and exteriors, with precise detailing, thoughtful spatial planning and refined materials across residential and commercial projects.
+                    </p>
+                    <div class="spotlight-actions">
+                        <a href="https://www.instagram.com/bbaarchitects/" target="_blank" rel="noopener" aria-label="Open BBA Architects Instagram">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-nav prev-image"><i class="fas fa-chevron-left"></i></div>
+        <div class="lightbox-nav next-image"><i class="fas fa-chevron-right"></i></div>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-image">
+        </div>
+        <div class="image-counter">1 / 3</div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> VANSH PORTFOLIO</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Lightbox functionality
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-image');
+        const closeBtn = document.querySelector('.close-lightbox');
+        const prevBtn = document.querySelector('.prev-image');
+        const nextBtn = document.querySelector('.next-image');
+        const counter = document.querySelector('.image-counter');
+        let currentImageIndex = 0;
+
+        function showImage(index) {
+            currentImageIndex = index;
+            const imgSrc = galleryItems[index].querySelector('img').src;
+            const imgAlt = galleryItems[index].querySelector('img').alt;
+            lightboxImg.src = imgSrc;
+            lightboxImg.alt = imgAlt;
+            counter.textContent = `${index + 1} / ${galleryItems.length}`;
+            
+            // Reset animation
+            lightboxImg.style.opacity = '0';
+            lightboxImg.style.transform = 'scale(0.95)';
+            
+            // Force reflow
+            lightboxImg.offsetHeight;
+            
+            // Start animation
+            lightboxImg.style.opacity = '1';
+            lightboxImg.style.transform = 'scale(1)';
+        }
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                lightbox.classList.add('active');
+                showImage(index);
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+            showImage(currentImageIndex);
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+            showImage(currentImageIndex);
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'ArrowLeft') {
+                currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+                showImage(currentImageIndex);
+            } else if (e.key === 'ArrowRight') {
+                currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+                showImage(currentImageIndex);
+            } else if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
+
+        <!-- Auto-refresh and cache-busting script -->
+        <script>
+            // Cache-busting function
+            function addCacheBuster() {
+                const timestamp = new Date().getTime();
+                const links = document.querySelectorAll('link[rel="stylesheet"]');
+                const scripts = document.querySelectorAll('script[src]');
+                const images = document.querySelectorAll('img[src]');
+                
+                // Add cache buster to CSS
+                links.forEach(link => {
+                    if (link.href && !link.href.includes('fonts.googleapis.com') && !link.href.includes('cdnjs.cloudflare.com')) {
+                        link.href = link.href + '?v=' + timestamp;
+                    }
+                });
+                
+                // Add cache buster to JS
+                scripts.forEach(script => {
+                    if (script.src && !script.src.includes('cdnjs.cloudflare.com')) {
+                        script.src = script.src + '?v=' + timestamp;
+                    }
+                });
+                
+                // Add cache buster to images
+                images.forEach(img => {
+                    if (img.src && !img.src.includes('data:')) {
+                        img.src = img.src + '?v=' + timestamp;
+                    }
+                });
+            }
+            
+            // Auto-refresh mechanism
+            function checkForUpdates() {
+                // Check if the page has been updated by comparing with a server timestamp
+                fetch(window.location.href + '?check=' + new Date().getTime(), {
+                    method: 'HEAD',
+                    cache: 'no-cache'
+                }).then(response => {
+                    const lastModified = response.headers.get('last-modified');
+                    if (lastModified && window.lastModifiedTime && lastModified !== window.lastModifiedTime) {
+                        // Page has been updated, refresh
+                        window.location.reload(true);
+                    }
+                    window.lastModifiedTime = lastModified;
+                }).catch(() => {
+                    // If fetch fails, just continue
+                });
+            }
+            
+            // Force refresh on page load
+            function forceRefresh() {
+                // Add timestamp to prevent caching
+                if (window.location.search.indexOf('v=') === -1) {
+                    const url = new URL(window.location);
+                    url.searchParams.set('v', new Date().getTime());
+                    window.history.replaceState({}, '', url);
+                }
+            }
+            
+            // Initialize on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                forceRefresh();
+                addCacheBuster();
+                
+                // Check for updates every 30 seconds
+                setInterval(checkForUpdates, 60000);
+                
+                // Force refresh every 5 minutes to ensure fresh content
+                setTimeout(() => {
+                    window.location.reload(true);
+                }, 600000); // 5 minutes
+            });
+            
+            // Override browser back/forward cache
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted) {
+                    window.location.reload(true);
+                }
+            });
+            
+            // Prevent caching of this page
+            window.addEventListener('beforeunload', function() {
+                // Clear any cached data
+                if ('caches' in window) {
+                    caches.keys().then(function(names) {
+                        names.forEach(function(name) {
+                            caches.delete(name);
+                        });
+                    });
+                }
+            });
+        </script>
+</body>
+</html> 

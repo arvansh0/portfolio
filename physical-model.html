@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Physical Modeling - VANSH PORTFOLIO</title>
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//www.youtube.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <style>
+        /* Navigation styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 0 60px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            min-width: 200px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        @media (max-width: 1100px) {
+            header {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+
+            .logo {
+                margin: 0 40px;
+                min-width: 180px;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            header {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                height: auto;
+            }
+
+            .logo {
+                order: -1;
+                width: 100%;
+                margin: 0 0 10px 0;
+                min-width: unset;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .social-links {
+                gap: 15px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Social links and buttons */
+        .social-links a {
+            color: #2C3E50;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #000000;
+        }
+
+        .cv-button, .contact-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            margin-left: 15px;
+            font-size: 0.9rem;
+            color: #333;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .cv-button:hover, .contact-button:hover {
+            background-color: #f5f5f5;
+            border-color: #d0d0d0;
+            transform: translateY(-1px);
+        }
+
+        .cv-button i, .contact-button i {
+            margin-right: 6px;
+            font-size: 0.9rem;
+        }
+
+        .model-hero {
+            height: 40vh;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('images/city-5642060_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .model-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-section {
+            margin-bottom: 40px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .video-item {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 30px auto;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 600px;
+            object-fit: contain;
+            background: #f5f5f5;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 500px; /* Set container height as you want */
+            overflow: hidden;
+            background: black; /* prevents white flashes */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 177.77%;   /* 16:9 aspect ratio: 100 * (16/9) = 177.77% */
+            height: 100%;
+            transform: translate(-50%, -50%);
+            pointer-events: auto;
+            border: none;
+        }
+
+        .video-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-section {
+            padding: 50px 0;
+            background-color: #F5F6FA;
+        }
+
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .gallery-grid {
+            column-count: 3;
+            column-gap: 28px;
+            padding: 10px 0 30px 0;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            transition: all 0.3s;
+        }
+
+        .gallery-item {
+            display: block;
+            width: 100%;
+            margin-bottom: 28px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(44,62,80,0.10), 0 1.5px 6px rgba(44,62,80,0.08);
+            background: #fff;
+            border: none;
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: none;
+            background: #f5f5f5;
+            transition: transform 0.35s cubic-bezier(.4,0,.2,1), filter 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.035) translateY(-6px) rotate(-1deg);
+            box-shadow: 0 16px 40px rgba(44,62,80,0.16), 0 2px 8px rgba(44,62,80,0.10);
+            z-index: 2;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #FFFFFF;
+            font-size: 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+            animation: lightboxFadeIn 0.3s cubic-bezier(.4,0,.2,1);
+        }
+
+        @keyframes lightboxFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: contentZoomIn 0.35s cubic-bezier(.4,0,.2,1);
+        }
+
+        @keyframes contentZoomIn {
+            from { transform: scale(0.85); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .lightbox-content img,
+        .lightbox-content video {
+            max-width: 85%;
+            max-height: 85vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 4px;
+            background: #f5f5f5;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 1002;
+        }
+
+        .close-lightbox:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 1002;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #000;
+            transform: translateY(-50%) scale(1.1);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .prev-image {
+            left: 20px;
+        }
+
+        .next-image {
+            right: 20px;
+        }
+
+        .image-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 1002;
+            backdrop-filter: blur(5px);
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1002;
+        }
+
+        .video-control-btn {
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .video-control-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Preview thumbnails container with arrows */
+        .preview-thumbnails-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1003;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 15px;
+            border-radius: 10px;
+            max-width: 70vw;
+        }
+
+        .preview-thumbnails {
+            display: flex;
+            gap: 8px;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            max-width: calc(100% - 80px);
+        }
+
+        .preview-thumbnail {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        /* Preview navigation arrows */
+        .preview-nav {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 14px;
+        }
+
+        .preview-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .preview-nav.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .gallery-grid {
+                column-count: 2;
+                column-gap: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                column-count: 1;
+                column-gap: 0;
+                padding: 0 0 20px 0;
+            }
+            .model-hero h1 {
+                font-size: 2.5rem;
+            }
+            .video-item iframe {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-item iframe {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-container {
+                padding: 15px;
+            }
+
+            .gallery-item img {
+                max-height: 200px;
+                border-radius: 12px;
+            }
+        }
+
+        /* Add these styles in the existing style section */
+        .skills-suggestions {
+            padding: 60px 0;
+            background-color: #F8F9FB;
+        }
+
+        .skills-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .skill-suggestion {
+            flex: 1;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            min-width: 200px;
+            max-width: 300px;
+        }
+
+        .skill-suggestion:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-suggestion i {
+            font-size: 2rem;
+            color: #2C3E50;
+            margin-bottom: 15px;
+        }
+
+        .skill-suggestion h3 {
+            font-size: 1.2rem;
+            color: #2C3E50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .skill-suggestion p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .skills-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .skill-suggestion {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Enhanced image quality */
+        img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: high-quality;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            will-change: transform;
+            image-rendering: auto;
+            image-rendering: smooth;
+        }
+
+        /* High DPI/Retina display support */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* Lazy loading styles */
+        img[data-src] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        img[data-src].loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <a href="index.html" class="logo">VANSH PORTFOLIO</a>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Work</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vansh-angiras-828275350" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/vansh_world" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="VANSH%20CV.png" download class="cv-button">
+                <i class="fas fa-download"></i>CV
+            </a>
+            <a href="contact.html" class="contact-button">
+                <i class="fas fa-envelope"></i>Contact
+            </a>
+        </div>
+    </header>
+
+    <nav class="nav-mobile">
+        <ul class="nav-links">
+            <li><a href="index.html">Work</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vansh-angiras-828275350" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/vansh_world" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="VANSH%20CV.png" download class="cv-button">
+                <i class="fas fa-download"></i>CV
+            </a>
+            <a href="contact.html" class="contact-button">
+                <i class="fas fa-envelope"></i>Contact
+            </a>
+        </div>
+    </nav>
+
+    <section class="model-hero">
+        <h1>Physical Modeling</h1>
+    </section>
+
+    <div class="gallery-container">
+        <!-- Videos Section -->
+        <h2 class="section-title">Featured Videos</h2>
+        <section class="video-section">
+            <div class="video-container">
+                <iframe
+                    width="100%"
+                    height="500"
+                    src="https://www.youtube.com/embed/QDh_UB3ZD_o?autoplay=1&mute=1&loop=1&playlist=QDh_UB3ZD_o&rel=0&modestbranding=1&controls=1&showinfo=1&iv_load_policy=3&fs=1&enablejsapi=1"
+                    title="Physical Model Video"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media; fullscreen"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Images Section -->
+        <h2 class="section-title" style="color: #2C3E50;">Gallery</h2>
+        <div class="gallery-grid">
+            <a href="SKILLS WORK/PHYSICAL MODELING/DSC08625.png" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/DSC08625.png" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/DSC08627.png" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/DSC08627.png" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/DSC08569.png" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/DSC08569.png" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/DSC08591.png" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/DSC08591.png" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/DSC08568.png" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/DSC08568.png" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/WERTYHJK.png" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/WERTYHJK.png" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/222.png" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/222.png" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/23.png" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/23.png" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/22.png" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/22.png" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/3.png" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/3.png" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/2.png" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/2.png" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/1.png" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/1.png" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/4.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/4.jpg" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/5.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/5.jpg" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/6.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/6.jpg" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/17.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/17.jpg" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/IMG_20230921_131700.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/IMG_20230921_131700.jpg" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/13.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/13.jpg" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/15.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/15.jpg" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/16.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/16.jpg" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/12.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/12.jpg" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/11.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/11.jpg" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/10.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/10.jpg" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/9.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/9.jpg" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/7.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/7.jpg" alt="Physical Model"></a>
+            <a href="SKILLS WORK/PHYSICAL MODELING/8.jpg" class="gallery-item" data-type="image"><img src="SKILLS%20WORK/PHYSICAL MODELING/8.jpg" alt="Physical Model"></a>
+        </div>
+    </div>
+
+    <!-- Skills Suggestions Section -->
+    <section class="skills-suggestions">
+        <div class="container">
+            <h2 class="section-title" style="color: #2C3E50;">Related Skills</h2>
+            <div class="skills-row">
+                <a href="photography.html" class="skill-suggestion">
+                    <i class="fas fa-camera"></i>
+                    <h3>Photography</h3>
+                    <p>Architectural Photography</p>
+                </a>
+                <a href="competitions.html" class="skill-suggestion">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Competitions</h3>
+                    <p>Design Competitions, Awards</p>
+                </a>
+                <a href="visualization.html" class="skill-suggestion">
+                    <i class="fas fa-cube"></i>
+                    <h3>Visualization</h3>
+                    <p>3D Modeling & Rendering</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-nav prev-image"><i class="fas fa-chevron-left"></i></div>
+        <div class="lightbox-nav next-image"><i class="fas fa-chevron-right"></i></div>
+        <div class="lightbox-content">
+            <img src="" alt="Enlarged image">
+        </div>
+        <div class="image-counter">1 / 24</div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> VANSH PORTFOLIO</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        // Image quality enhancement
+        function enhanceImageQuality() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.setAttribute('loading', 'lazy');
+                img.setAttribute('decoding', 'async');
+                img.style.willChange = 'transform';
+                img.style.backfaceVisibility = 'hidden';
+                img.style.transform = 'translateZ(0)';
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            enhanceImageQuality();
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Lightbox functionality with navigation
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const closeLightbox = document.querySelector('.close-lightbox');
+        const prevButton = document.querySelector('.prev-image');
+        const nextButton = document.querySelector('.next-image');
+        const counter = document.querySelector('.image-counter');
+        let currentImageIndex = 0;
+
+        function showImage(index) {
+            currentImageIndex = index;
+            const imgSrc = galleryItems[index].querySelector('img').src;
+            const imgAlt = galleryItems[index].querySelector('img').alt;
+            lightboxImg.src = imgSrc;
+            lightboxImg.alt = imgAlt;
+            counter.textContent = `${index + 1} / ${galleryItems.length}`;
+        }
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                showImage(index);
+                lightbox.classList.add('active');
+            });
+        });
+
+        prevButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+            showImage(currentImageIndex);
+        });
+
+        nextButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+            showImage(currentImageIndex);
+        });
+
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'ArrowLeft') {
+                currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+                showImage(currentImageIndex);
+            } else if (e.key === 'ArrowRight') {
+                currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+                showImage(currentImageIndex);
+            } else if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
+
+        <!-- Auto-refresh and cache-busting script -->
+        <script>
+            // Cache-busting function
+            function addCacheBuster() {
+                const timestamp = new Date().getTime();
+                const links = document.querySelectorAll('link[rel="stylesheet"]');
+                const scripts = document.querySelectorAll('script[src]');
+                const images = document.querySelectorAll('img[src]');
+                
+                // Add cache buster to CSS
+                links.forEach(link => {
+                    if (link.href && !link.href.includes('fonts.googleapis.com') && !link.href.includes('cdnjs.cloudflare.com')) {
+                        link.href = link.href + '?v=' + timestamp;
+                    }
+                });
+                
+                // Add cache buster to JS
+                scripts.forEach(script => {
+                    if (script.src && !script.src.includes('cdnjs.cloudflare.com')) {
+                        script.src = script.src + '?v=' + timestamp;
+                    }
+                });
+                
+                // Add cache buster to images
+                images.forEach(img => {
+                    if (img.src && !img.src.includes('data:')) {
+                        img.src = img.src + '?v=' + timestamp;
+                    }
+                });
+            }
+            
+            // Auto-refresh mechanism
+            function checkForUpdates() {
+                // Check if the page has been updated by comparing with a server timestamp
+                fetch(window.location.href + '?check=' + new Date().getTime(), {
+                    method: 'HEAD',
+                    cache: 'no-cache'
+                }).then(response => {
+                    const lastModified = response.headers.get('last-modified');
+                    if (lastModified && window.lastModifiedTime && lastModified !== window.lastModifiedTime) {
+                        // Page has been updated, refresh
+                        window.location.reload(true);
+                    }
+                    window.lastModifiedTime = lastModified;
+                }).catch(() => {
+                    // If fetch fails, just continue
+                });
+            }
+            
+            // Force refresh on page load
+            function forceRefresh() {
+                // Add timestamp to prevent caching
+                if (window.location.search.indexOf('v=') === -1) {
+                    const url = new URL(window.location);
+                    url.searchParams.set('v', new Date().getTime());
+                    window.history.replaceState({}, '', url);
+                }
+            }
+            
+            // Initialize on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                forceRefresh();
+                addCacheBuster();
+                
+                // Check for updates every 30 seconds
+                setInterval(checkForUpdates, 60000);
+                
+                // Force refresh every 5 minutes to ensure fresh content
+                setTimeout(() => {
+                    window.location.reload(true);
+                }, 600000); // 5 minutes
+            });
+            
+            // Override browser back/forward cache
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted) {
+                    window.location.reload(true);
+                }
+            });
+            
+            // Prevent caching of this page
+            window.addEventListener('beforeunload', function() {
+                // Clear any cached data
+                if ('caches' in window) {
+                    caches.keys().then(function(names) {
+                        names.forEach(function(name) {
+                            caches.delete(name);
+                        });
+                    });
+                }
+            });
+        </script>
+</body>
+</html> 

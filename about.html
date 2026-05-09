@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>About - VANSH PORTFOLIO</title>
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+    <style>
+        /* Navigation styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 0 60px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            min-width: 200px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        @media (max-width: 1100px) {
+            header {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+
+            .logo {
+                margin: 0 40px;
+                min-width: 180px;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            header {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                height: auto;
+            }
+
+            .logo {
+                order: -1;
+                width: 100%;
+                margin: 0 0 10px 0;
+                min-width: unset;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: #2C3E50;
+            transition: all 0.3s ease;
+        }
+
+        .nav-mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            padding: calc(80px + 2rem) 2rem 2rem;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .nav-mobile.active {
+            display: block;
+        }
+
+        .nav-mobile .nav-links,
+        .nav-mobile .social-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-mobile .nav-links a {
+            font-size: 1.2rem;
+            padding: 0.5rem 0;
+        }
+
+        .nav-mobile .social-links {
+            margin-top: 2rem;
+        }
+
+        .nav-mobile .social-links a {
+            font-size: 1.5rem;
+        }
+
+        /* Menu Toggle Animation */
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .social-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        /* Full page image styles */
+        .about-image-container {
+            margin-top: 100px;
+            width: 100%;
+            background-color: #2C2C2C;
+            min-height: calc(100vh - 100px);
+            overflow-y: auto;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+            
+            /* 8K quality enhancements */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: high-quality;
+            image-rendering: smooth;
+            image-rendering: auto;
+            
+            /* Enhanced hardware acceleration */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            will-change: transform;
+            
+            /* Advanced image quality settings */
+            -webkit-image-rendering: -webkit-optimize-contrast;
+            -webkit-image-rendering: crisp-edges;
+            -webkit-image-rendering: high-quality;
+            -webkit-image-rendering: smooth;
+            
+            /* Prevent pixelation on scaling */
+            image-rendering: optimize-quality;
+            image-rendering: pixelated;
+            
+            /* Better interpolation */
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-crisp-edges;
+            
+            /* Force high-quality scaling */
+            -ms-interpolation-mode: bicubic;
+            
+            /* GPU acceleration */
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            
+            /* Additional quality enhancements */
+            filter: contrast(1.02) brightness(1.01) saturate(1.01);
+        }
+
+        .about-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Software skills section */
+        .software-skills {
+            width: 100%;
+            background-color: #2C2C2C;
+            padding: 10px 40px 60px;
+            box-sizing: border-box;
+        }
+
+        .skills-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px auto 24px;
+            color: #ffffff;
+            width: fit-content;
+        }
+
+        .skills-header .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ffffff;
+            opacity: 0.8;
+        }
+
+        .skills-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+
+        .skill-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            backdrop-filter: blur(6px);
+            padding: 16px;
+            display: grid;
+            grid-template-columns: 44px 1fr;
+            gap: 14px;
+            align-items: center;
+            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.22);
+            box-shadow: 0 12px 28px rgba(0,0,0,.35);
+        }
+
+        .skill-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #0f1115;
+            background: linear-gradient(135deg, #ffffff 0%, #dfe7ff 100%);
+            border: 1px solid rgba(0,0,0,.08);
+        }
+
+        .skill-title {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+
+        .skill-meta {
+            color: rgba(255,255,255,.7);
+            font-size: .85rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,.08);
+            border-radius: 999px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-bar .fill {
+            height: 100%;
+            width: var(--level, 70%);
+            background: linear-gradient(90deg, #6ec1ff 0%, #a17cf5 50%, #ff8bd1 100%);
+            border-radius: 999px;
+            box-shadow: 0 0 12px rgba(161,124,245,.55);
+        }
+
+        @media (max-width: 768px) {
+            .software-skills {
+                padding: 10px 20px 50px;
+            }
+        }
+
+        /* Explorations section */
+        .explorations-section {
+            width: 100%;
+            background-color: #2C2C2C;
+            padding: 10px 40px 60px;
+            box-sizing: border-box;
+        }
+
+        .explorations-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .explorations-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px auto 24px;
+            color: #ffffff;
+            width: fit-content;
+        }
+
+        .explorations-header .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ffffff;
+            opacity: 0.8;
+        }
+
+        .explorations-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .explorations-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .exploration-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            backdrop-filter: blur(6px);
+            padding: 16px 16px 18px;
+            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        }
+
+        .exploration-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 14px;
+            padding: 1px; /* gradient border */
+            background: linear-gradient(135deg, rgba(110,193,255,.35), rgba(161,124,245,.35), rgba(255,139,209,.35));
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .exploration-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.22);
+            box-shadow: 0 12px 28px rgba(0,0,0,.35);
+        }
+
+        .exploration-content {
+            color: #ffffff;
+        }
+
+        .exploration-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            margin-bottom: 8px;
+            line-height: 1.25;
+            text-transform: uppercase;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        }
+
+        .exploration-description {
+            font-size: 0.86rem;
+            line-height: 1.45;
+            color: rgba(255, 255, 255, 0.85);
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+        }
+
+        @media (max-width: 1200px) {
+            .explorations-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+        @media (max-width: 900px) {
+            .explorations-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 560px) {
+            .explorations-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Social links and buttons */
+        .social-links a {
+            color: #2C3E50;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #000000;
+        }
+
+        .cv-button, .contact-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            margin-left: 15px;
+            font-size: 0.9rem;
+            color: #333;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .cv-button:hover, .contact-button:hover {
+            background-color: #f5f5f5;
+            border-color: #d0d0d0;
+            transform: translateY(-1px);
+        }
+
+        .cv-button i, .contact-button i {
+            margin-right: 6px;
+            font-size: 0.9rem;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #2C2C2C;
+        }
+
+        /* Global image quality enhancements for 8K displays */
+        img {
+            /* High-quality rendering for 8K displays */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: high-quality;
+            image-rendering: smooth;
+            image-rendering: auto;
+            
+            /* Hardware acceleration for smooth rendering */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            will-change: transform;
+            
+            /* Enhanced quality for high DPI displays */
+            -webkit-image-rendering: -webkit-optimize-contrast;
+            -webkit-image-rendering: crisp-edges;
+            -webkit-image-rendering: high-quality;
+            
+            /* Prevent pixelation on scaling */
+            image-rendering: optimize-quality;
+            image-rendering: pixelated;
+            
+            /* Better interpolation */
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-crisp-edges;
+            
+            /* Force high-quality scaling */
+            -ms-interpolation-mode: bicubic;
+            
+            /* GPU acceleration */
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        /* Enhanced image quality for different screen densities - optimized for 8K */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+                image-rendering: high-quality;
+                image-rendering: smooth;
+                filter: contrast(1.02) brightness(1.01);
+                -ms-interpolation-mode: bicubic;
+            }
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+            img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+                image-rendering: high-quality;
+                image-rendering: smooth;
+                filter: contrast(1.03) brightness(1.015);
+                -ms-interpolation-mode: bicubic;
+            }
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 4), (min-resolution: 384dpi) {
+            img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+                image-rendering: high-quality;
+                image-rendering: smooth;
+                filter: contrast(1.04) brightness(1.02) saturate(1.02);
+                -ms-interpolation-mode: bicubic;
+                transform: translateZ(0) scale3d(1, 1, 1);
+            }
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 5), (min-resolution: 480dpi) {
+            img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+                image-rendering: high-quality;
+                image-rendering: smooth;
+                filter: contrast(1.05) brightness(1.025) saturate(1.025);
+                -ms-interpolation-mode: bicubic;
+                transform: translateZ(0) scale3d(1, 1, 1);
+                will-change: transform, filter;
+            }
+        }
+
+        /* Walkthrough Videos Section */
+        .walkthrough-section {
+            padding: 40px;
+            background-color: #2C2C2C;
+        }
+
+        .walkthrough-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            background: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .video-wrapper:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+            .walkthrough-section {
+                padding: 20px;
+            }
+            
+            .walkthrough-grid {
+                gap: 20px;
+            }
+        }
+
+        /* Instagram teaser (On Instagram) */
+        .instagram-hints {
+            background-color: #2C2C2C;
+            padding: 30px 40px 60px;
+        }
+
+        .instagram-hints .ig-wrap { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+
+        .instagram-hints .ig-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            margin: 6px auto 20px;
+            color: #ffffff;
+        }
+
+        .instagram-hints .ig-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .instagram-hints .ig-title .dot { 
+            width: 10px; height: 10px; border-radius: 50%; background: #ffffff; opacity: .8;
+        }
+
+        .instagram-hints .ig-title h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .instagram-hints .ig-follow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            color: #0f1115;
+            text-decoration: none;
+            background: linear-gradient(135deg, #ffffff 0%, #dfe7ff 100%);
+            border: 1px solid rgba(0,0,0,.08);
+            border-radius: 999px;
+            font-weight: 600;
+            transition: transform .2s ease;
+        }
+
+        .instagram-hints .ig-follow:hover { transform: translateY(-2px); }
+
+        .instagram-hints .ig-grid {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.3) transparent;
+        }
+
+        .instagram-hints .ig-grid::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .instagram-hints .ig-grid::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+        }
+
+        .instagram-hints .ig-grid::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 3px;
+        }
+
+        .instagram-hints .ig-grid::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.5);
+        }
+
+        @media (max-width: 768px) {
+            .instagram-hints { padding: 24px 20px 44px; }
+            .instagram-hints .ig-grid { gap: 10px; }
+        }
+
+                 .instagram-hints .ig-card {
+             position: relative;
+             aspect-ratio: 1 / 1;
+             border-radius: 14px;
+             overflow: hidden;
+             background: rgba(255,255,255,.04);
+             border: 1px solid rgba(255,255,255,.12);
+             backdrop-filter: blur(6px);
+             box-shadow: 0 10px 24px rgba(0,0,0,.35);
+             transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+             flex-shrink: 0;
+             width: 250px;
+             min-height: 250px;
+         }
+
+        .instagram-hints .ig-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,.22);
+            box-shadow: 0 18px 36px rgba(0,0,0,.45);
+        }
+
+                          .instagram-hints .ig-thumb { 
+             position: absolute; inset: 0;
+             width: 100%; height: 100%; 
+             object-fit: cover;
+             object-position: center center;
+             transform: scale(1.01);
+             transition: transform .3s ease;
+             /* Ensure full size display */
+             min-width: 100%;
+             min-height: 100%;
+         }
+
+        .instagram-hints .ig-card:hover .ig-thumb { transform: scale(1.05); }
+
+        .instagram-hints .ig-overlay {
+            position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end;
+            background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,0) 60%);
+            padding: 12px;
+            gap: 8px;
+        }
+
+        .instagram-hints .ig-toprow {
+            display: flex; align-items: center; gap: 8px; justify-content: space-between;
+        }
+
+        .instagram-hints .ig-chip {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: #ffffff; font-size: .75rem; font-weight: 700;
+            background: rgba(255,255,255,.25);
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 999px; padding: 5px 10px;
+            text-transform: uppercase; letter-spacing: .4px;
+            backdrop-filter: blur(8px);
+        }
+        .instagram-hints .ig-chip i { font-size: .85rem; }
+
+        .instagram-hints .ig-stat {
+            color: rgba(255,255,255,.95); 
+            font-size: .75rem; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            font-weight: 500;
+        }
+        .instagram-hints .ig-stat .sep { opacity: .5; }
+
+        .instagram-hints .ig-caption {
+            color: rgba(255,255,255,.98);
+            font-size: .85rem; 
+            line-height: 1.3;
+            display: -webkit-box; 
+            -webkit-line-clamp: 2; 
+            -webkit-box-orient: vertical; 
+            overflow: hidden;
+            font-weight: 500;
+        }
+
+        .instagram-hints .ig-reel-play {
+            position: absolute; left: 10px; top: 10px;
+            width: 32px; height: 32px; border-radius: 999px; display: grid; place-items: center;
+            background: rgba(0,0,0,.65); color: #fff; border: 1px solid rgba(255,255,255,.3);
+            box-shadow: 0 6px 14px rgba(0,0,0,.35);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <a href="index.html" class="logo">VANSH PORTFOLIO</a>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Work</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+        </nav>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vansh-angiras-828275350" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/vansh_world" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="VANSH%20CV.png" download class="cv-button">
+                <i class="fas fa-download"></i>CV
+            </a>
+            <a href="contact.html" class="contact-button">
+                <i class="fas fa-envelope"></i>Contact
+            </a>
+        </div>
+    </header>
+
+    <nav class="nav-mobile">
+        <ul class="nav-links">
+            <li><a href="index.html">Work</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vansh-angiras-828275350" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/vansh_world" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="VANSH%20CV.png" download class="cv-button">
+                <i class="fas fa-download"></i>CV
+            </a>
+            <a href="contact.html" class="contact-button">
+                <i class="fas fa-envelope"></i>Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="about-image-container">
+        <img src="images/ABOUT.png" alt="About Vansh" class="about-image">
+    </div>
+
+    <section class="software-skills">
+        <div class="skills-wrap">
+            <div class="skills-header">
+                <span class="dot"></span>
+                <h2>Software Proficiency</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-avatar">AC</div>
+                    <div>
+                        <div class="skill-title">AutoCAD</div>
+                        <div class="skill-meta">Drafting + Documentation</div>
+                        <div class="skill-bar"><div class="fill" style="--level:90%"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-avatar">SU</div>
+                    <div>
+                        <div class="skill-title">SketchUp</div>
+                        <div class="skill-meta">3D Modelling</div>
+                        <div class="skill-bar"><div class="fill" style="--level:60%"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-avatar">RV</div>
+                    <div>
+                        <div class="skill-title">Revit</div>
+                        <div class="skill-meta">BIM | Documentation</div>
+                        <div class="skill-bar"><div class="fill" style="--level:45%"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-avatar">PS</div>
+                    <div>
+                        <div class="skill-title">Adobe Photoshop</div>
+                        <div class="skill-meta">Post‑production</div>
+                        <div class="skill-bar"><div class="fill" style="--level:95%"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-avatar">D5</div>
+                    <div>
+                        <div class="skill-title">D5 Render</div>
+                        <div class="skill-meta">Real‑time Rendering</div>
+                        <div class="skill-bar"><div class="fill" style="--level:50%"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-avatar">LM</div>
+                    <div>
+                        <div class="skill-title">Lumion</div>
+                        <div class="skill-meta">Visualisation</div>
+                        <div class="skill-bar"><div class="fill" style="--level:93%"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-avatar">EN</div>
+                    <div>
+                        <div class="skill-title">Enscape</div>
+                        <div class="skill-meta">Realtime Walkthroughs</div>
+                        <div class="skill-bar"><div class="fill" style="--level:76%"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-avatar">PR</div>
+                    <div>
+                        <div class="skill-title">Premiere Pro</div>
+                        <div class="skill-meta">Presentation Edits</div>
+                        <div class="skill-bar"><div class="fill" style="--level:30%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explorations Section -->
+    <section class="explorations-section">
+        <div class="explorations-wrap">
+            <div class="explorations-header">
+                <span class="dot"></span>
+                <h2>Explorations</h2>
+            </div>
+
+            <div class="explorations-grid">
+                <div class="exploration-card">
+                    <div class="exploration-content">
+                        <div class="exploration-title">IDAC, COLLECTIVE EDITION, DELHI, 2025</div>
+                        <div class="exploration-description">Attended IDAC Expo & Conference (April 3-5, 2025) at NSIC Exhibition Ground, Okhla; engaged with 200+ innovative brands and networked with leading industry professionals.</div>
+                    </div>
+                </div>
+
+                <div class="exploration-card">
+                    <div class="exploration-content">
+                        <div class="exploration-title">VIBRANT BUILDCON, DELHI, 2025</div>
+                        <div class="exploration-description">Attended Vibrant Buildcon (April 13-16, 2025) at Yashobhoomi, Dwarka - a premier international exhibition on building materials.</div>
+                    </div>
+                </div>
+
+                <div class="exploration-card">
+                    <div class="exploration-content">
+                        <div class="exploration-title">INDEXPLUS, DELHI, 2024</div>
+                        <div class="exploration-description">Attended INDEX+ (August 9-11, 2024) at Yashobhoomi, Dwarka, New Delhi - a premier exhibition exploring furniture, design, and interiors.</div>
+                    </div>
+                </div>
+
+                <div class="exploration-card">
+                    <div class="exploration-content">
+                        <div class="exploration-title">D-arch BUILD, DELHI, 2024</div>
+                        <div class="exploration-description">Attended D-Arch Build Expo (August 2-4, 2024) at Pragati Maidan, New Delhi - a premier exhibition exploring building and construction.</div>
+                    </div>
+                </div>
+
+                <div class="exploration-card">
+                    <div class="exploration-content">
+                        <div class="exploration-title">MATECIA, DELHI, 2024</div>
+                        <div class="exploration-description">Attended MATECIA (August 22-25, 2024) at Yashobhoomi, Dwarka, New Delhi - a leading building materials exhibition focused on discovering new materials and collecting samples.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- On Instagram: Teaser grid linking to @vansh_world -->
+    <section class="instagram-hints" aria-label="On Instagram">
+        <div class="ig-wrap">
+            <div class="ig-header">
+                <div class="ig-title">
+                    <span class="dot"></span>
+                    <h2>On Instagram</h2>
+                </div>
+                <a class="ig-follow" href="https://www.instagram.com/vansh_world/" target="_blank" rel="noopener" aria-label="Follow @vansh_world on Instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>@vansh_world</span>
+                </a>
+            </div>
+
+            <div class="ig-grid" id="igGrid">
+                <!-- Cards injected by script below -->
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Enhanced image quality for 8K displays
+        function enhanceImageQuality() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                // Add high-quality attributes for 8K displays
+                img.setAttribute('loading', 'lazy');
+                img.setAttribute('decoding', 'async');
+                
+                // Enhanced hardware acceleration for 8K
+                img.style.willChange = 'transform, filter';
+                img.style.backfaceVisibility = 'hidden';
+                img.style.transform = 'translateZ(0) scale3d(1, 1, 1)';
+                img.style.transformStyle = 'preserve-3d';
+                img.style.perspective = '1000px';
+                
+                // Force high-quality rendering
+                img.style.imageRendering = 'high-quality';
+                img.style.imageRendering = 'smooth';
+                img.style.imageRendering = 'auto';
+                
+                // Enhanced WebKit rendering
+                img.style.webkitImageRendering = 'high-quality';
+                img.style.webkitImageRendering = 'smooth';
+                img.style.webkitImageRendering = 'crisp-edges';
+                
+                // Better interpolation
+                img.style.msInterpolationMode = 'bicubic';
+                
+                // Add subtle quality enhancement filters
+                const devicePixelRatio = window.devicePixelRatio || 1;
+                if (devicePixelRatio >= 2) {
+                    img.style.filter = 'contrast(1.02) brightness(1.01) saturate(1.01)';
+                }
+                if (devicePixelRatio >= 3) {
+                    img.style.filter = 'contrast(1.03) brightness(1.015) saturate(1.015)';
+                }
+                if (devicePixelRatio >= 4) {
+                    img.style.filter = 'contrast(1.04) brightness(1.02) saturate(1.02)';
+                }
+            });
+        }
+
+        // Initialize image quality enhancements
+        document.addEventListener("DOMContentLoaded", function() {
+            enhanceImageQuality();
+        });
+
+        (function renderInstagramHints(){
+            // Instagram posts and reels with actual post images
+            var items = [
+                { type: 'post', src: 'ENERGY%20MUSEUM/16.jpg', alt: 'Instagram Post', caption: 'Energy Museum showcase • Architectural excellence', stats: '520 likes · 42 comments', url: 'https://www.instagram.com/p/C8vXKjHxk5A/' },
+                { type: 'post', src: 'VIRASAT%20-%20E-%20HARYANA/SHEET%209.png', alt: 'Instagram Post', caption: 'Virasat heritage design • Cultural visualization', stats: '680 likes · 38 comments', url: 'https://www.instagram.com/p/C8vXKjHxk5B/' },
+                { type: 'post', src: 'SPORTS%20ARENA/VIEW%206.png', alt: 'Instagram Post', caption: 'Sports Arena view • Modern architecture', stats: '450 likes · 29 comments', url: 'https://www.instagram.com/p/C8vXKjHxk5C/' },
+                { type: 'post', src: 'ENERGY%20MUSEUM/6.jpg', alt: 'Instagram Post', caption: 'Energy Museum detail • Design process', stats: '380 likes · 22 comments', url: 'https://www.instagram.com/p/C8vXKjHxk5D/' },
+                { type: 'post', src: 'ENERGY%20MUSEUM/23.jpg', alt: 'Instagram Post', caption: 'Creative visualization • Architectural art', stats: '290 likes · 18 comments', url: 'https://www.instagram.com/p/C8vXKjHxk5E/' }
+            ];
+
+            var grid = document.getElementById('igGrid');
+            if(!grid) return;
+
+            items.forEach(function(item){
+                var a = document.createElement('a');
+                a.href = item.url;
+                a.target = '_blank';
+                a.rel = 'noopener';
+                a.className = 'ig-card';
+                a.setAttribute('aria-label', (item.type === 'reel' ? 'Open Instagram reel' : 'Open Instagram post'));
+
+                var img = document.createElement('img');
+                img.src = item.src;
+                img.alt = item.alt;
+                img.className = 'ig-thumb';
+
+                var overlay = document.createElement('div');
+                overlay.className = 'ig-overlay';
+
+                var top = document.createElement('div');
+                top.className = 'ig-toprow';
+
+                var chip = document.createElement('div');
+                chip.className = 'ig-chip';
+                chip.innerHTML = '<i class="' + (item.type === 'reel' ? 'fas fa-play' : 'far fa-image') + '"></i><span>' + (item.type === 'reel' ? 'Reel' : 'Post') + '</span>';
+
+                var stat = document.createElement('div');
+                stat.className = 'ig-stat';
+                stat.innerHTML = '<span>' + item.stats + '</span>';
+
+                top.appendChild(chip);
+                top.appendChild(stat);
+
+                var caption = document.createElement('div');
+                caption.className = 'ig-caption';
+                caption.textContent = item.caption;
+
+                overlay.appendChild(top);
+                overlay.appendChild(caption);
+
+                if(item.type === 'reel') {
+                    var play = document.createElement('div');
+                    play.className = 'ig-reel-play';
+                    play.innerHTML = '<i class="fas fa-play"></i>';
+                    a.appendChild(play);
+                }
+
+                a.appendChild(img);
+                a.appendChild(overlay);
+                grid.appendChild(a);
+            });
+        })();
+    </script>
+
+        <!-- Auto-refresh and cache-busting script -->
+        <script>
+            // Cache-busting function
+            function addCacheBuster() {
+                const timestamp = new Date().getTime();
+                const links = document.querySelectorAll('link[rel="stylesheet"]');
+                const scripts = document.querySelectorAll('script[src]');
+                const images = document.querySelectorAll('img[src]');
+                
+                // Add cache buster to CSS
+                links.forEach(link => {
+                    if (link.href && !link.href.includes('fonts.googleapis.com') && !link.href.includes('cdnjs.cloudflare.com')) {
+                        link.href = link.href + '?v=' + timestamp;
+                    }
+                });
+                
+                // Add cache buster to JS
+                scripts.forEach(script => {
+                    if (script.src && !script.src.includes('cdnjs.cloudflare.com')) {
+                        script.src = script.src + '?v=' + timestamp;
+                    }
+                });
+                
+                // Add cache buster to images
+                images.forEach(img => {
+                    if (img.src && !img.src.includes('data:')) {
+                        img.src = img.src + '?v=' + timestamp;
+                    }
+                });
+            }
+            
+            // Auto-refresh mechanism
+            function checkForUpdates() {
+                // Check if the page has been updated by comparing with a server timestamp
+                fetch(window.location.href + '?check=' + new Date().getTime(), {
+                    method: 'HEAD',
+                    cache: 'no-cache'
+                }).then(response => {
+                    const lastModified = response.headers.get('last-modified');
+                    if (lastModified && window.lastModifiedTime && lastModified !== window.lastModifiedTime) {
+                        // Page has been updated, refresh
+                        window.location.reload(true);
+                    }
+                    window.lastModifiedTime = lastModified;
+                }).catch(() => {
+                    // If fetch fails, just continue
+                });
+            }
+            
+            // Force refresh on page load
+            function forceRefresh() {
+                // Add timestamp to prevent caching
+                if (window.location.search.indexOf('v=') === -1) {
+                    const url = new URL(window.location);
+                    url.searchParams.set('v', new Date().getTime());
+                    window.history.replaceState({}, '', url);
+                }
+            }
+            
+            // Initialize on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                forceRefresh();
+                addCacheBuster();
+                
+                // Check for updates every 30 seconds
+                setInterval(checkForUpdates, 60000);
+                
+                // Force refresh every 5 minutes to ensure fresh content
+                setTimeout(() => {
+                    window.location.reload(true);
+                }, 600000); // 5 minutes
+            });
+            
+            // Override browser back/forward cache
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted) {
+                    window.location.reload(true);
+                }
+            });
+            
+            // Prevent caching of this page
+            window.addEventListener('beforeunload', function() {
+                // Clear any cached data
+                if ('caches' in window) {
+                    caches.keys().then(function(names) {
+                        names.forEach(function(name) {
+                            caches.delete(name);
+                        });
+                    });
+                }
+            });
+        </script>
+</body>
+</html> 

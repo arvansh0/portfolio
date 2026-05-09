@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Society Design (Freelance) - VANSH PORTFOLIO</title>
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+    <style>
+        /* Inline styles copied to mirror virasat-e-haryana page */
+        .project-header { padding: 80px 20px 40px; background-color: #F5F6FA; text-align: center; }
+        .project-title { font-size: 2.5rem; font-weight: 700; color: #2C3E50; margin-bottom: 20px; }
+        .project-description { max-width: 800px; margin: 0 auto; color: #666; font-size: 1.1rem; line-height: 1.6; }
+        .drawings-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 30px; padding: 30px 20px; max-width: 1600px; margin: 0 auto; }
+        .drawing-item { position: relative; width: 100%; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.15); transition: transform 0.3s ease; cursor: pointer; background: white; min-height: 600px; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        .drawing-item:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.2); }
+        .drawing-item img { width: 100%; height: auto; max-height: 1000px; display: block; object-fit: contain; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; -webkit-font-smoothing: antialiased; backface-visibility: hidden; transform: translateZ(0); -webkit-transform: translateZ(0); will-change: transform; }
+        .back-button { display: inline-flex; align-items: center; padding: 10px 20px; margin: 20px; background-color: #2C3E50; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s ease; }
+        .back-button:hover { background-color: #1a252f; }
+        .back-button i { margin-right: 8px; }
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
+        .lightbox.active { display: flex; animation: modalFadeIn 0.3s ease; }
+        .lightbox-content { max-width: 98%; max-height: 98vh; position: relative; background: transparent; padding: 0; border-radius: 0; }
+        .lightbox-content img { max-width: 100%; max-height: 98vh; object-fit: contain; background: transparent; padding: 0; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; -webkit-font-smoothing: antialiased; backface-visibility: hidden; transform: translateZ(0); -webkit-transform: translateZ(0); will-change: transform; }
+        .lightbox-close { position: absolute; top: -40px; right: 0; color: white; font-size: 30px; cursor: pointer; padding: 5px; }
+        .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); color: white; font-size: 30px; cursor: pointer; padding: 20px; background: rgba(0,0,0,0.5); border-radius: 50%; transition: background 0.3s ease; }
+        .lightbox-nav:hover { background: rgba(0,0,0,0.8); }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+        @keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @media (min-width: 1600px) { .drawings-grid { padding: 40px 30px; } .drawing-item { min-height: 800px; } }
+        @media (max-width: 1200px) { .drawing-item { min-height: 500px; } }
+        @media (max-width: 768px) { .drawings-grid { gap: 25px; padding: 25px 15px; } .drawing-item { min-height: 400px; } }
+        @media (max-width: 480px) { .drawings-grid { gap: 20px; padding: 20px 10px; } .drawing-item { min-height: 300px; padding: 5px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="index.html" class="logo">VANSH PORTFOLIO</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Work</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vansh-angiras-828275350" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/vansh_world" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="VANSH%20CV.png" download class="cv-button"><i class="fas fa-download"></i>CV</a>
+            <a href="contact.html" class="contact-button"><i class="fas fa-envelope"></i>Contact</a>
+        </div>
+    </header>
+
+    <nav class="nav-mobile">
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Work</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vansh-angiras-828275350" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/vansh_world" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="VANSH%20CV.png" download class="cv-button"><i class="fas fa-download"></i>CV</a>
+            <a href="contact.html" class="contact-button"><i class="fas fa-envelope"></i>Contact</a>
+        </div>
+    </nav>
+
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Projects
+    </a>
+
+    <section class="project-header">
+        <h1 class="project-title">Society Design (Freelance)</h1>
+        <p class="project-description">
+            Freelancing work for a residential society: master planning, block layout, street hierarchy,
+            landscape integration and photorealistic visualizations prepared for stakeholder presentations.
+        </p>
+    </section>
+
+    <section class="drawings-grid">
+        <!-- Sheets / Boards (PNG) -->
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/0.png" alt="Board 0" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/2.png" alt="Board 2" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/3.png" alt="Board 3" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/4.png" alt="Board 4" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/5.png" alt="Board 5" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/6.png" alt="Board 6" onclick="openLightbox(this.src)">
+        </div>
+
+        <!-- Renders (JPG) -->
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/1.jpg" alt="Render 1" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/7.jpg" alt="Render 7" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/8.jpg" alt="Render 8" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/9.jpg" alt="Render 9" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/10.jpg" alt="Render 10" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/11.jpg" alt="Render 11" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/12.jpg" alt="Render 12" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/13.jpg" alt="Render 13" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/14.jpg" alt="Render 14" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/15.jpg" alt="Render 15" onclick="openLightbox(this.src)">
+        </div>
+        <div class="drawing-item">
+            <img src="SOCIETY%20DESIGN/16.jpg" alt="Render 16" onclick="openLightbox(this.src)">
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img src="" alt="Lightbox Image" id="lightbox-img">
+            <div class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">&#10094;</div>
+            <div class="lightbox-nav lightbox-next" onclick="changeImage(1)">&#10095;</div>
+        </div>
+    </div>
+
+    <script>
+        // Image quality enhancement (same pattern as other pages)
+        function enhanceImageQuality() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.setAttribute('loading', 'lazy');
+                img.setAttribute('decoding', 'async');
+                img.style.willChange = 'transform';
+                img.style.backfaceVisibility = 'hidden';
+                img.style.transform = 'translateZ(0)';
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            enhanceImageQuality();
+        });
+
+        // Lightbox functionality (mirrors virasat-e-haryana)
+        let currentImageIndex = 0;
+        const images = Array.from(document.querySelectorAll('.drawing-item img'));
+
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            currentImageIndex = images.findIndex(img => img.src === src);
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            document.getElementById('lightbox-img').src = images[currentImageIndex].src;
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeImage(-1);
+            if (e.key === 'ArrowRight') changeImage(1);
+        });
+
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+    </script>
+
+        <!-- Auto-refresh and cache-busting script -->
+        <script>
+            // Cache-busting function
+            function addCacheBuster() {
+                const timestamp = new Date().getTime();
+                const links = document.querySelectorAll('link[rel="stylesheet"]');
+                const scripts = document.querySelectorAll('script[src]');
+                const images = document.querySelectorAll('img[src]');
+                
+                // Add cache buster to CSS
+                links.forEach(link => {
+                    if (link.href && !link.href.includes('fonts.googleapis.com') && !link.href.includes('cdnjs.cloudflare.com')) {
+                        link.href = link.href + '?v=' + timestamp;
+                    }
+                });
+                
+                // Add cache buster to JS
+                scripts.forEach(script => {
+                    if (script.src && !script.src.includes('cdnjs.cloudflare.com')) {
+                        script.src = script.src + '?v=' + timestamp;
+                    }
+                });
+                
+                // Add cache buster to images
+                images.forEach(img => {
+                    if (img.src && !img.src.includes('data:')) {
+                        img.src = img.src + '?v=' + timestamp;
+                    }
+                });
+            }
+            
+            // Auto-refresh mechanism
+            function checkForUpdates() {
+                // Check if the page has been updated by comparing with a server timestamp
+                fetch(window.location.href + '?check=' + new Date().getTime(), {
+                    method: 'HEAD',
+                    cache: 'no-cache'
+                }).then(response => {
+                    const lastModified = response.headers.get('last-modified');
+                    if (lastModified && window.lastModifiedTime && lastModified !== window.lastModifiedTime) {
+                        // Page has been updated, refresh
+                        window.location.reload(true);
+                    }
+                    window.lastModifiedTime = lastModified;
+                }).catch(() => {
+                    // If fetch fails, just continue
+                });
+            }
+            
+            // Force refresh on page load
+            function forceRefresh() {
+                // Add timestamp to prevent caching
+                if (window.location.search.indexOf('v=') === -1) {
+                    const url = new URL(window.location);
+                    url.searchParams.set('v', new Date().getTime());
+                    window.history.replaceState({}, '', url);
+                }
+            }
+            
+            // Initialize on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                forceRefresh();
+                addCacheBuster();
+                
+                // Check for updates every 30 seconds
+                setInterval(checkForUpdates, 60000);
+                
+                // Force refresh every 5 minutes to ensure fresh content
+                setTimeout(() => {
+                    window.location.reload(true);
+                }, 600000); // 5 minutes
+            });
+            
+            // Override browser back/forward cache
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted) {
+                    window.location.reload(true);
+                }
+            });
+            
+            // Prevent caching of this page
+            window.addEventListener('beforeunload', function() {
+                // Clear any cached data
+                if ('caches' in window) {
+                    caches.keys().then(function(names) {
+                        names.forEach(function(name) {
+                            caches.delete(name);
+                        });
+                    });
+                }
+            });
+        </script>
+</body>
+</html>
+

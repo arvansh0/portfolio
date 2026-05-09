@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="width">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta http-equiv="Cache-Control" content="public, max-age=604800">
+    <meta http-equiv="Pragma" content="cache">
+    <meta http-equiv="Expires" content="604800">
+    <title>VANSH PORTFOLIO</title>
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+    
+    <!-- Preload critical images with fetchpriority -->
+    <link rel="preload" href="ENERGY%20MUSEUM/1.png" as="image" type="image/png" fetchpriority="high">
+    <link rel="preload" href="VIRASAT%20-%20E-%20HARYANA/RENDER%2014%20-2.jpg" as="image" type="image/jpeg" fetchpriority="high">
+    <link rel="preload" href="DESIGN%20VILLAGE/1.png" as="image" type="image/png" fetchpriority="high">
+    <link rel="preload" href="SPORTS%20ARENA/VIEW%201.png" as="image" type="image/png">
+    <link rel="preload" href="GROUP%20HOUSING%20SHEETS/VIEW%201.png" as="image" type="image/png">
+    <link rel="preload" href="RECREATIONAL%20CLUB%20SHEETS/VIEW%201.jpg" as="image" type="image/jpeg">
+    <link rel="preload" href="WORKING%20DRAWINGS/0.png" as="image" type="image/png">
+    <link rel="preload" href="SOCIETY%20DESIGN/7.jpg" as="image" type="image/jpeg">
+    
+    <!-- Preload critical CSS and JS -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Resource hints for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://www.youtube.com">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" as="style" crossorigin>
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//www.youtube.com">
+
+
+    <style>
+        /* Navigation Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2C3E50;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #000000;
+        }
+
+        .nav-links a.active {
+            color: #000000;
+            font-weight: 600;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 0 60px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            min-width: 200px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .social-links a {
+            color: #2C3E50;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #000000;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: #2C3E50;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        @media (max-width: 1100px) {
+            header {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+
+            .logo {
+                margin: 0 40px;
+                min-width: 180px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            header {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                height: auto;
+            }
+
+            .logo {
+                order: -1;
+                width: 100%;
+                margin: 0 0 10px 0;
+                min-width: unset;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
+                background: white;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .social-links {
+                gap: 15px;
+                margin-top: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                right: 15px;
+                top: 15px;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+                margin: 0;
+                min-width: unset;
+                width: auto;
+            }
+
+            .cv-button, .contact-button {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 8px 10px;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            .social-links {
+                gap: 10px;
+            }
+
+            .cv-button, .contact-button {
+                padding: 6px 10px;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Mobile-friendly hero section */
+        @media (max-width: 768px) {
+            .hero {
+                height: 50vh;
+            }
+
+            .video-container {
+                border-radius: 10px;
+            }
+
+            .video-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .prev-btn {
+                left: 10px;
+            }
+
+            .next-btn {
+                right: 10px;
+            }
+        }
+
+        /* Mobile-friendly projects section */
+        @media (max-width: 768px) {
+            .projects {
+                padding: 30px 0;
+            }
+
+            .projects-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .project-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 15px;
+                padding: 0 15px;
+            }
+
+            .project-card {
+                height: 250px;
+            }
+
+            .project-card h3 {
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .project-card {
+                height: 200px;
+            }
+
+            .projects-title h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Refined Projects Section Title - Without Dot */
+        .projects-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .projects-title h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2C3E50;
+            letter-spacing: 1.5px;
+            margin: 0;
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+            padding: 0 15px;
+        }
+        
+        .projects-title h2::before,
+        .projects-title h2::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            background-color: #000000;
+            top: 50%;
+        }
+        
+        .projects-title h2::before {
+            width: 40px;
+            right: 100%;
+        }
+        
+        .projects-title h2::after {
+            width: 40px;
+            left: 100%;
+        }
+        
+        /* Keep Enhanced Project Grid with smooth transitions */
+        .projects {
+            padding: 60px 0;
+            background-color: #F5F6FA;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(44, 62, 80, 0.1);
+            transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), 
+                        box-shadow 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+            background-color: #FFFFFF;
+            height: 300px;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(44, 62, 80, 0.15);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+            
+            /* Optimized image rendering */
+            image-rendering: high-quality;
+            image-rendering: smooth;
+            
+            /* Light hardware acceleration */
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .project-card:hover .project-image img {
+            filter: blur(1.5px) brightness(0.85);
+            transform: scale(1.03);
+        }
+        
+        .project-card h3 {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            color: white;
+            font-size: 1.2rem;
+            background: linear-gradient(to top, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0));
+            margin: 0;
+            transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+            text-align: center;
+            opacity: 0;
+        }
+        
+        .project-card:hover h3 {
+            bottom: 0;
+            opacity: 1;
+        }
+
+        .social-links a {
+            color: #2C3E50;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #000000;
+        }
+        
+        /* Keep Enhanced Hero Section */
+        .hero {
+            height: 80vh;
+            position: relative;
+            overflow: hidden;
+            background-color: #F5F6FA;
+        }
+        
+  .hero {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+  }
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect */
+    height: 0;
+    overflow: hidden;
+  }
+  .video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .video-controls {
+    margin-top: 10px;
+  }
+  .video-nav {
+    padding: 8px 16px;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+        
+        footer {
+            background-color: #2C3E50;
+            color: #FFFFFF;
+            padding: 40px 0 0;
+        }
+
+        /* Footer (scoped) */
+        .site-footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .site-footer .brand-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #FFA63A;
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .site-footer .brand-sub {
+            margin: 0;
+            color: #cfd8e3;
+            font-size: 0.95rem;
+        }
+
+        .site-footer .col h4 {
+            margin: 0 0 14px 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .site-footer .social {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .site-footer .icon-circle {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .site-footer .icon-circle:hover { background: rgba(255, 255, 255, 0.18); transform: translateY(-2px); }
+
+        .site-footer .links { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+        .site-footer .links li { display: flex; align-items: center; }
+        .site-footer .links a { color: #dbe4ee; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: color 0.2s, transform 0.2s; }
+        .site-footer .links a:hover { color: #ffffff; }
+        .site-footer .links li.primary a { color: #ffffff; font-weight: 600; }
+        .site-footer .links i { width: 18px; text-align: center; opacity: 0.9; }
+
+        /* Footer CTA buttons */
+        .cta-group { display: grid; gap: 12px; }
+        .footer-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            height: 42px;
+            padding: 0 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.95);
+            text-decoration: none;
+            font-weight: 600;
+            width: fit-content;
+            transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, color 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), inset 0 0 0 1px rgba(255,255,255,0.04);
+        }
+        .footer-btn:hover { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.22); box-shadow: 0 2px 6px rgba(0,0,0,0.15), inset 0 0 0 1px rgba(255,255,255,0.06); }
+        .footer-btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
+        .footer-btn i { width: 18px; text-align: center; font-size: 0.95rem; }
+
+        .footer-sep { height: 1px; background: rgba(255, 255, 255, 0.12); margin: 24px 0 0 0; }
+        .footer-copy { text-align: center; color: #cfd8e3; font-size: 0.9rem; padding: 12px 20px 20px; margin: 0; }
+
+        @media (max-width: 900px) {
+            .site-footer { grid-template-columns: 1fr 1fr; gap: 24px; }
+        }
+
+        @media (max-width: 640px) {
+            .site-footer { grid-template-columns: 1fr; text-align: center; }
+            .site-footer .social { justify-content: center; }
+            .cta-group { justify-content: center; }
+        }
+
+        .menu-toggle span {
+            background-color: #2C3E50;
+        }
+
+        .menu-toggle:hover span {
+            background-color: #000000;
+        }
+
+        /* Video Navigation Styles */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .video-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 2;
+            opacity: 1;
+        }
+
+        .video-container:hover .video-nav {
+            opacity: 1;
+        }
+
+        .video-nav:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-50%) scale(1.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .prev-btn {
+            left: 30px;
+        }
+
+        .next-btn {
+            right: 30px;
+        }
+
+        /* Video transition effects */
+        .video-fade-out {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        .video-fade-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Video progress indicator */
+        .video-progress {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 2;
+        }
+
+        .progress-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .progress-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        /* Add CV button styles */
+        .cv-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            margin-left: 15px;
+            font-size: 0.9rem;
+            color: #333;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .cv-button:hover {
+            background-color: #f5f5f5;
+            border-color: #d0d0d0;
+            transform: translateY(-1px);
+        }
+
+        .cv-button i {
+            margin-right: 6px;
+            font-size: 0.9rem;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            margin-left: 15px;
+            font-size: 0.9rem;
+            color: #333;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-button:hover {
+            background-color: #f5f5f5;
+            border-color: #d0d0d0;
+            transform: translateY(-1px);
+        }
+
+        .contact-button i {
+            margin-right: 6px;
+            font-size: 0.9rem;
+        }
+
+        .cursor {
+  display: none;
+}
+
+        /* Optimized image quality enhancements with progressive loading */
+        img {
+            /* Essential image rendering */
+            image-rendering: high-quality;
+            image-rendering: smooth;
+            
+            /* Light hardware acceleration */
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            will-change: transform;
+            
+            /* Progressive loading effect */
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        img.loaded {
+            opacity: 1;
+        }
+        
+        /* Blur-up placeholder effect */
+        .project-image {
+            position: relative;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 2s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .project-image img.loaded {
+            background: transparent;
+            animation: none;
+        }
+
+        /* Lazy loading styles */
+        img[data-src] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        img[data-src].loaded {
+            opacity: 1;
+        }
+
+        /* Progressive image loading */
+        .project-image {
+            position: relative;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        .project-image img {
+            transition: opacity 0.3s ease;
+        }
+
+        .project-image img:not(.loaded) {
+            opacity: 0;
+        }
+
+        .project-image img.loaded {
+            opacity: 1;
+            animation: none;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* High DPI/Retina display support */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* WebP support detection */
+        .webp .project-image img,
+        .webp .gallery-item img,
+        .webp .drawing-item img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+
+        /* Image loading states */
+        .project-image {
+            position: relative;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .project-image img.loaded {
+            background: none;
+            animation: none;
+        }
+
+        .project-image.loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        /* Essential high DPI support */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .project-image img, img {
+                image-rendering: high-quality;
+                image-rendering: smooth;
+            }
+        }
+
+        /* Loading Progress Indicator */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #2C3E50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Compact Professional Review System */
+        .reviews-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px 0;
+            position: relative;
+        }
+
+
+        .reviews-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .reviews-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .reviews-title p {
+            font-size: 1rem;
+            color: #6c757d;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .reviews-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .review-form-container {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e9ecef;
+            height: fit-content;
+        }
+
+        .review-form-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .review-form-header h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin: 0 0 8px 0;
+            font-weight: 600;
+        }
+
+        .review-form-header p {
+            color: #6c757d;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .review-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: border-color 0.2s ease;
+            background: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #6c757d;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 60px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .quick-rating {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .quick-rating-btn {
+            padding: 8px 16px;
+            border: 2px solid #e9ecef;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #6c757d;
+        }
+
+        .quick-rating-btn:hover,
+        .quick-rating-btn.active {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+            transform: translateY(-1px);
+        }
+
+        .rating-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            justify-content: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .rating-container label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 5px;
+            direction: rtl;
+        }
+
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 1.5rem;
+            color: #dee2e6;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input[type="radio"]:checked ~ label {
+            color: #ffc107;
+        }
+
+        .submit-review-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 auto;
+        }
+
+        .submit-review-btn:hover {
+            background: #0056b3;
+        }
+
+        .submit-review-btn i {
+            font-size: 0.9rem;
+        }
+
+        .comments-display {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e9ecef;
+            height: fit-content;
+        }
+
+        .comments-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .comments-header h4 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin: 0 0 8px 0;
+            font-weight: 600;
+        }
+
+        .comments-header p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .sweet-comments {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sweet-comment {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sweet-comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .sweet-comment-name {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9rem;
+        }
+
+        .sweet-comment-rating {
+            color: #ffc107;
+            font-size: 0.8rem;
+        }
+
+        .sweet-comment-text {
+            color: #495057;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin: 0 0 6px 0;
+        }
+
+        .sweet-comment-date {
+            color: #6c757d;
+            font-size: 0.75rem;
+            text-align: right;
+        }
+
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .reviews-section {
+                padding: 30px 0;
+            }
+
+            .reviews-title h2 {
+                font-size: 2rem;
+            }
+
+            .reviews-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 0 15px;
+            }
+
+            .review-form-container,
+            .comments-display {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .reviews-title h2 {
+                font-size: 2rem;
+            }
+
+            .review-form-container {
+                padding: 20px;
+                margin: 0 10px 20px 10px;
+            }
+
+            .star-rating label {
+                font-size: 1.5rem;
+            }
+
+            .review-card {
+                padding: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <header>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <a href="index.html" class="logo">VANSH PORTFOLIO</a>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Work</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vansh-angiras-828275350" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/vansh_world" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="VANSH CV.png" download class="cv-button">
+                <i class="fas fa-download"></i>CV
+            </a>
+            <a href="contact.html" class="contact-button">
+                <i class="fas fa-envelope"></i>Contact
+            </a>
+        </div>
+    </header>
+
+    <nav class="nav-mobile">
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Work</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vansh-angiras-828275350" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/vansh_world" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="VANSH CV.png" download class="cv-button">
+                <i class="fas fa-download"></i>CV
+            </a>
+            <a href="contact.html" class="contact-button">
+                <i class="fas fa-envelope"></i>Contact
+            </a>
+        </div>
+    </nav>
+
+<section class="hero">
+  <div class="hero-media">
+    <div class="video-container">
+      <iframe
+        class="hero-video"
+        src="https://www.youtube.com/embed/kM0DGVF_2nI?autoplay=1&mute=1&loop=1&playlist=kM0DGVF_2nI&playsinline=1"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="video-controls">
+      <button class="video-nav prev-btn" aria-label="Previous video">⟵</button>
+      <button class="video-nav next-btn" aria-label="Next video">⟶</button>
+    </div>
+  </div>
+</section>
+
+    <section class="projects">
+        <div class="container">
+            <div class="projects-title">
+                <h2>MY PROJECTS</h2>
+            </div>
+            <div class="project-grid">
+                <a href="energy-museum.html" class="project-card">
+                    <div class="project-image">
+                        <img src="ENERGY%20MUSEUM/1.png" alt="Energy Museum" loading="eager" decoding="async" fetchpriority="high" width="300" height="200" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+                    </div>
+                    <h3>Energy Museum</h3>
+                </a>
+                <a href="virasat-e-haryana.html" class="project-card">
+                    <div class="project-image">
+                        <img src="VIRASAT%20-%20E-%20HARYANA/RENDER%2014%20-2.jpg" alt="Virasat-E-Haryana" loading="eager" decoding="async" fetchpriority="high" width="300" height="200" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+                    </div>
+                    <h3>Virasat-E-Haryana</h3>
+                </a>
+                <a href="design-village.html" class="project-card">
+                    <div class="project-image">
+                        <img src="DESIGN%20VILLAGE/1.png" alt="Design Village Documentation" loading="eager" decoding="async" fetchpriority="high" width="300" height="200" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+                    </div>
+                    <h3>Design Village</h3>
+                </a>
+                <a href="sports-arena.html" class="project-card">
+                    <div class="project-image">
+                        <img src="SPORTS%20ARENA/VIEW%201.png" alt="Sports Arena" loading="eager" decoding="async" fetchpriority="high" width="300" height="200" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+                    </div>
+                    <h3>Sports Arena</h3>
+                </a>
+                <a href="group-housing.html" class="project-card">
+                    <div class="project-image">
+                        <img src="GROUP%20HOUSING%20SHEETS/VIEW%201.png" alt="Group Housing" loading="eager" decoding="async" fetchpriority="high" width="300" height="200" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+                    </div>
+                    <h3>Group Housing</h3>
+                </a>
+                <a href="recreational-club.html" class="project-card">
+                    <div class="project-image">
+                        <img src="RECREATIONAL%20CLUB%20SHEETS/VIEW%201.jpg" alt="Recreational Club" loading="eager" decoding="async" fetchpriority="high" width="300" height="200" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+                    </div>
+                    <h3>Recreational Club</h3>
+                </a>
+                <a href="working-drawings.html" class="project-card">
+                    <div class="project-image">
+                        <img src="WORKING%20DRAWINGS/0.png" alt="Working Drawings" loading="eager" decoding="async" fetchpriority="high" width="300" height="200" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+                    </div>
+                    <h3>Working Drawings</h3>
+                </a>
+                <a href="society-design.html" class="project-card">
+                    <div class="project-image">
+                        <img src="SOCIETY%20DESIGN/7.jpg" alt="Society Design (Freelance)" loading="eager" decoding="async" fetchpriority="high" width="300" height="200" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+                    </div>
+                    <h3>Society Design (Freelance)</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="reviews-title">
+                <h2>WHAT PEOPLE SAY</h2>
+                <p>Reviews & Feedback from Clients & Peers</p>
+            </div>
+            
+        <div class="reviews-content">
+            <!-- Review Form -->
+            <div class="review-form-container">
+                <div class="review-form-header">
+                    <h3>Share Your Thoughts</h3>
+                    <p>Help others discover great architecture by leaving a review</p>
+                </div>
+                
+                <form class="review-form" id="reviewForm">
+                    <div class="form-group">
+                        <input type="text" id="reviewerName" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="reviewerEmail" placeholder="Your Email Address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="projectSelect" required>
+                            <option value="">Select a Project</option>
+                            <option value="energy-museum">Energy Museum</option>
+                            <option value="virasat-e-haryana">Virasat-E-Haryana</option>
+                            <option value="design-village">Design Village</option>
+                            <option value="sports-arena">Sports Arena</option>
+                            <option value="group-housing">Group Housing</option>
+                            <option value="recreational-club">Recreational Club</option>
+                            <option value="working-drawings">Working Drawings</option>
+                            <option value="society-design">Society Design</option>
+                        </select>
+                    </div>
+                    
+                    <div class="quick-rating">
+                        <button type="button" class="quick-rating-btn" data-rating="5">Excellent ⭐⭐⭐⭐⭐</button>
+                        <button type="button" class="quick-rating-btn" data-rating="4">Very Good ⭐⭐⭐⭐</button>
+                        <button type="button" class="quick-rating-btn" data-rating="3">Good ⭐⭐⭐</button>
+                    </div>
+                    
+                    <div class="rating-container">
+                        <label>Detailed Rating:</label>
+                        <div class="star-rating">
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5" class="star">★</label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4" class="star">★</label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3" class="star">★</label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2" class="star">★</label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1" class="star">★</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="reviewText" placeholder="Write a sweet comment about this project..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-review-btn">
+                        <i class="fas fa-heart"></i>
+                        Share Your Thoughts
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Sweet Comments Display -->
+            <div class="comments-display">
+                <div class="comments-header">
+                    <h4>💬 Sweet Comments</h4>
+                    <p>Recent thoughts from visitors</p>
+                </div>
+                
+                <div class="sweet-comments" id="sweetComments">
+                    <!-- Sweet comments will appear here -->
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="site-footer" role="contentinfo" aria-label="Website footer">
+            <div class="col">
+                <h3 class="brand-title">VANSH PORTFOLIO</h3>
+                <p class="brand-sub">Architectural Excellence Through Innovation</p>
+            </div>
+            <div class="col">
+                <h4>Connect</h4>
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/vansh-angiras-828275350" target="_blank" aria-label="LinkedIn" class="icon-circle"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/vansh_world" target="_blank" aria-label="Instagram" class="icon-circle"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col">
+                <h4>Resume & Contact</h4>
+                <div class="cta-group">
+                    <a class="footer-btn" href="VANSH CV.png" download aria-label="Download CV"><i class="fas fa-download"></i><span>Download CV</span></a>
+                    <a class="footer-btn" href="contact.html" aria-label="Contact page"><i class="fas fa-envelope"></i><span>Contact</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-sep"></div>
+        <p class="footer-copy">&copy; <span id="year"></span> VANSH PORTFOLIO. All rights reserved.</p>
+    </footer>
+
+   
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.menu-toggle') && !event.target.closest('.nav-links')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        });
+
+        // WebP support detection
+        function supportsWebP() {
+            return new Promise((resolve) => {
+                const webP = new Image();
+                webP.onload = webP.onerror = function () {
+                    resolve(webP.height === 2);
+                };
+                webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+            });
+        }
+
+                 // Advanced image loading with intersection observer and priority loading
+         function loadImages() {
+             const images = document.querySelectorAll('img');
+             
+             // Separate critical and lazy images
+             const criticalImages = [];
+             const lazyImages = [];
+             
+             images.forEach(img => {
+                 // First 8 project cover images are critical
+                 const index = Array.from(images).indexOf(img);
+                 if (index < 8 && img.parentElement.classList.contains('project-image')) {
+                     criticalImages.push(img);
+                 } else {
+                     lazyImages.push(img);
+                 }
+             });
+             
+             // Load critical images immediately
+             criticalImages.forEach(img => {
+                 img.setAttribute('loading', 'eager');
+                 img.setAttribute('fetchpriority', 'high');
+                 img.setAttribute('decoding', 'async');
+                 
+                 // Add error handling
+                 img.onerror = function() {
+                     console.warn('Failed to load image:', this.src);
+                     this.style.display = 'none';
+                 };
+                 
+                 // Add load handler
+                 if (img.complete && img.naturalHeight !== 0) {
+                     img.classList.add('loaded');
+                 } else {
+                     img.onload = function() {
+                         this.classList.add('loaded');
+                         this.style.imageRendering = 'high-quality';
+                         this.style.imageRendering = 'smooth';
+                     };
+                 }
+             });
+             
+             // Create intersection observer for lazy images
+             const imageObserver = new IntersectionObserver((entries, observer) => {
+                 entries.forEach(entry => {
+                     if (entry.isIntersecting) {
+                         const img = entry.target;
+                         
+                         // Add optimized attributes
+                         img.setAttribute('loading', 'lazy');
+                         img.setAttribute('decoding', 'async');
+                         
+                         // Handle load completion
+                         img.onload = function() {
+                             img.classList.add('loaded');
+                             img.style.imageRendering = 'high-quality';
+                             img.style.imageRendering = 'smooth';
+                         };
+                         
+                         // Handle load error
+                         img.onerror = function() {
+                             console.warn('Failed to load image:', img.src);
+                             img.classList.add('error');
+                         };
+                         
+                         observer.unobserve(img);
+                     }
+                 });
+             }, {
+                 rootMargin: '100px 0px',
+                 threshold: 0.01
+             });
+             
+             // Observe lazy images
+             lazyImages.forEach(img => {
+                 imageObserver.observe(img);
+             });
+         }
+
+        // Optimized image quality enhancement
+        function enhanceImageQuality() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                // Add essential attributes only
+                img.setAttribute('loading', 'lazy');
+                img.setAttribute('decoding', 'async');
+                
+                // Light hardware acceleration
+                img.style.willChange = 'transform';
+                img.style.backfaceVisibility = 'hidden';
+                img.style.transform = 'translateZ(0)';
+                
+                // Basic quality rendering
+                img.style.imageRendering = 'high-quality';
+                img.style.imageRendering = 'smooth';
+            });
+        }
+
+        // Optimized video carousel functionality
+        document.addEventListener("DOMContentLoaded", function () {
+            const videos = [
+                "https://www.youtube.com/embed/kM0DGVF_2nI?autoplay=1&mute=1&loop=1&playlist=kM0DGVF_2nI&playsinline=1&rel=0&modestbranding=1",
+                "https://www.youtube.com/embed/DnGYoeJO5k4?autoplay=1&mute=1&loop=1&playlist=DnGYoeJO5k4&playsinline=1&rel=0&modestbranding=1",
+                "https://www.youtube.com/embed/Iad1P_zLVDg?autoplay=1&mute=1&loop=1&playlist=Iad1P_zLVDg&playsinline=1&rel=0&modestbranding=1",
+                "https://www.youtube.com/embed/eTMQNJWU6kM?autoplay=1&mute=1&loop=1&playlist=eTMQNJWU6kM&playsinline=1&rel=0&modestbranding=1",
+                "https://www.youtube.com/embed/TW02CC3zA2w?autoplay=1&mute=1&loop=1&playlist=TW02CC3zA2w&playsinline=1&rel=0&modestbranding=1",
+                "https://www.youtube.com/embed/ate-m6SQRLQ?autoplay=1&mute=1&loop=1&playlist=ate-m6SQRLQ&playsinline=1&rel=0&modestbranding=1",
+                "https://www.youtube.com/embed/b62NLxnyhQM?autoplay=1&mute=1&loop=1&playlist=b62NLxnyhQM&playsinline=1&rel=0&modestbranding=1",
+                "https://www.youtube.com/embed/TVGPoQFIXbg?autoplay=1&mute=1&loop=1&playlist=TVGPoQFIXbg&playsinline=1&rel=0&modestbranding=1",
+                "https://www.youtube.com/embed/8L_pmftnD5c?autoplay=1&mute=1&loop=1&playlist=8L_pmftnD5c&playsinline=1&rel=0&modestbranding=1"
+            ];
+
+            let currentIndex = 0;
+            const iframe = document.querySelector(".hero-video");
+
+            function loadVideo(index) {
+                iframe.classList.remove("video-fade-in");
+                iframe.classList.add("video-fade-out");
+                setTimeout(() => {
+                    iframe.src = videos[index];
+                    iframe.classList.remove("video-fade-out");
+                    iframe.classList.add("video-fade-in");
+                }, 200);
+            }
+
+            // Initial load
+            loadVideo(currentIndex);
+
+            document.querySelector(".next-btn").addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % videos.length;
+                loadVideo(currentIndex);
+            });
+
+            document.querySelector(".prev-btn").addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+                loadVideo(currentIndex);
+            });
+        });
+
+        // Initialize image quality enhancements
+        document.addEventListener("DOMContentLoaded", function() {
+            // Check WebP support and add class
+            supportsWebP().then(supported => {
+                if (supported) {
+                    document.documentElement.classList.add('webp');
+                }
+            });
+
+            // Initialize image loading
+            loadImages();
+            
+            // Enhance image quality
+            enhanceImageQuality();
+            
+            // Initialize review system
+            initializeReviewSystem();
+        });
+
+        // Compact Review System Functionality
+        function initializeReviewSystem() {
+            // Sample sweet comments
+            const sampleComments = [
+                {
+                    id: 1,
+                    name: "Sarah M.",
+                    rating: 5,
+                    text: "Absolutely stunning design! The way light flows through the space is magical ✨",
+                    date: "2024-01-15"
+                },
+                {
+                    id: 2,
+                    name: "James C.",
+                    rating: 5,
+                    text: "Incredible attention to detail. This is what modern architecture should be! 🏗️",
+                    date: "2024-01-20"
+                },
+                {
+                    id: 3,
+                    name: "Maria R.",
+                    rating: 4,
+                    text: "Beautiful sustainable design. Love how it educates while inspiring! 🌱",
+                    date: "2024-01-25"
+                }
+            ];
+
+            let comments = [...sampleComments];
+
+            // Load comments from localStorage if available
+            const savedComments = localStorage.getItem('portfolioComments');
+            if (savedComments) {
+                comments = JSON.parse(savedComments);
+            }
+
+            // Display sweet comments
+            function displaySweetComments() {
+                const commentsContainer = document.getElementById('sweetComments');
+                const recentComments = comments.slice(-4).reverse(); // Show last 4 comments
+                
+                if (recentComments.length === 0) {
+                    commentsContainer.innerHTML = '<div class="sweet-comment"><p style="text-align: center; color: #6c757d; margin: 0;">Be the first to share your thoughts! 💭</p></div>';
+                    return;
+                }
+
+                commentsContainer.innerHTML = recentComments.map(comment => `
+                    <div class="sweet-comment">
+                        <div class="sweet-comment-header">
+                            <div class="sweet-comment-name">${comment.name}</div>
+                            <div class="sweet-comment-rating">${'★'.repeat(comment.rating)}</div>
+                        </div>
+                        <div class="sweet-comment-text">${comment.text}</div>
+                        <div class="sweet-comment-date">${new Date(comment.date).toLocaleDateString()}</div>
+                    </div>
+                `).join('');
+            }
+
+            // Quick rating buttons
+            function setupQuickRating() {
+                const quickRatingBtns = document.querySelectorAll('.quick-rating-btn');
+                quickRatingBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Remove active class from all buttons
+                        quickRatingBtns.forEach(b => b.classList.remove('active'));
+                        // Add active class to clicked button
+                        btn.classList.add('active');
+                        
+                        // Set the star rating
+                        const rating = btn.dataset.rating;
+                        const starInput = document.querySelector(`input[name="rating"][value="${rating}"]`);
+                        if (starInput) {
+                            starInput.checked = true;
+                        }
+                    });
+                });
+            }
+
+            // Form submission
+            function setupForm() {
+                const form = document.getElementById('reviewForm');
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('reviewerName').value;
+                    const email = document.getElementById('reviewerEmail').value;
+                    const project = document.getElementById('projectSelect').value;
+                    const rating = document.querySelector('input[name="rating"]:checked')?.value;
+                    const text = document.getElementById('reviewText').value;
+
+                    if (!name || !email || !project || !rating || !text) {
+                        alert('Please fill in all fields including your email address');
+                        return;
+                    }
+
+                    // Basic email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert('Please enter a valid email address');
+                        return;
+                    }
+
+                    const newComment = {
+                        id: Date.now(),
+                        name: name,
+                        email: email,
+                        rating: parseInt(rating),
+                        text: text,
+                        date: new Date().toISOString().split('T')[0]
+                    };
+
+                    comments.push(newComment);
+                    localStorage.setItem('portfolioComments', JSON.stringify(comments));
+                    
+                    // Reset form
+                    form.reset();
+                    document.querySelectorAll('.quick-rating-btn').forEach(btn => btn.classList.remove('active'));
+                    
+                    // Show success message
+                    const submitBtn = document.querySelector('.submit-review-btn');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fas fa-heart"></i> Thank You! 💕';
+                    submitBtn.style.background = '#28a745';
+                    
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.style.background = '#007bff';
+                    }, 2000);
+                    
+                    // Refresh display
+                    displaySweetComments();
+                });
+            }
+
+            // Initialize everything
+            displaySweetComments();
+            setupQuickRating();
+            setupForm();
+        }
+
+    </script>
+        <script src="script.js"></script>
+
+        <!-- Service Worker Registration with Auto-Update -->
+        <script>
+            // Register Service Worker for better caching with auto-refresh
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js?v=' + Date.now())
+                        .then(registration => {
+                            console.log('SW registered: ', registration);
+                            
+                            // Check for updates every 30 seconds
+                            setInterval(() => {
+                                registration.update();
+                            }, 30000);
+                            
+                            // Update service worker if available
+                            registration.addEventListener('updatefound', () => {
+                                const newWorker = registration.installing;
+                                newWorker.addEventListener('statechange', () => {
+                                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                        // New content is available, reload the page automatically
+                                        if(confirm('New version available! Click OK to reload.')) {
+                                            window.location.reload(true);
+                                        }
+                                    }
+                                });
+                            });
+                        })
+                        .catch(registrationError => {
+                            console.log('SW registration failed: ', registrationError);
+                        });
+                });
+            }
+            
+            // Auto-refresh on server file changes
+            let lastModified = null;
+            setInterval(async () => {
+                try {
+                    const response = await fetch(window.location.href + '?t=' + Date.now(), {method: 'HEAD'});
+                    const modified = response.headers.get('last-modified');
+                    if (lastModified && modified && modified !== lastModified) {
+                        window.location.reload(true);
+                    }
+                    lastModified = modified;
+                } catch(e) {
+                    console.log('Auto-refresh check failed');
+                }
+            }, 60000); // Check every minute
+            
+                         // Preload critical resources with instant load
+             function preloadCriticalResources() {
+                 const criticalImages = [
+                     'ENERGY%20MUSEUM/1.png',
+                     'VIRASAT%20-%20E-%20HARYANA/RENDER%2014%20-2.jpg',
+                     'DESIGN%20VILLAGE/1.png',
+                     'SPORTS%20ARENA/VIEW%201.png',
+                     'GROUP%20HOUSING%20SHEETS/VIEW%201.png',
+                     'RECREATIONAL%20CLUB%20SHEETS/VIEW%201.jpg',
+                     'WORKING%20DRAWINGS/0.png',
+                     'SOCIETY%20DESIGN/7.jpg'
+                 ];
+                 
+                 // Create image objects to preload
+                 criticalImages.forEach(src => {
+                     const img = new Image();
+                     img.src = src;
+                     img.loading = 'eager';
+                     img.fetchPriority = 'high';
+                 });
+             }
+            
+            
+            
+                         // Initialize performance optimizations
+             document.addEventListener('DOMContentLoaded', function() {
+                 preloadCriticalResources();
+                 
+                 // Optimize font loading
+                 if ('fonts' in document) {
+                     document.fonts.ready.then(() => {
+                         document.body.classList.add('fonts-loaded');
+                     });
+                 }
+                 
+                 // Hide loading overlay after page loads
+                 window.addEventListener('load', function() {
+                     setTimeout(() => {
+                         const loadingOverlay = document.getElementById('loadingOverlay');
+                         if (loadingOverlay) {
+                             loadingOverlay.classList.add('hidden');
+                         }
+                     }, 500);
+                 });
+                 
+                 // Preload next page resources
+                 const nextPageLinks = document.querySelectorAll('a[href$=".html"]');
+                 nextPageLinks.forEach(link => {
+                     link.addEventListener('mouseenter', function() {
+                         const href = this.getAttribute('href');
+                         if (href && !document.querySelector(`link[href="${href}"]`)) {
+                             const preloadLink = document.createElement('link');
+                             preloadLink.rel = 'prefetch';
+                             preloadLink.href = href;
+                             document.head.appendChild(preloadLink);
+                         }
+                     });
+                 });
+             });
+            
+            // Set current year in footer
+            document.addEventListener('DOMContentLoaded', function() {
+                const yearElement = document.getElementById('year');
+                if (yearElement) {
+                    yearElement.textContent = new Date().getFullYear();
+                }
+            });
+        </script>
+        
+</body>
+</html> 

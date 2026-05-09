@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Design Village - VANSH PORTFOLIO</title>
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+    <style>
+        /* Navigation Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2C3E50;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #000000;
+        }
+
+        .nav-links a.active {
+            color: #000000;
+            font-weight: 600;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 0 60px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            min-width: 200px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .social-links a {
+            color: #2C3E50;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #000000;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: #2C3E50;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 1100px) {
+            header {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+
+            .logo {
+                margin: 0 40px;
+                min-width: 180px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            header {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                height: auto;
+            }
+
+            .logo {
+                order: -1;
+                width: 100%;
+                margin: 0 0 10px 0;
+                min-width: unset;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .social-links {
+                gap: 15px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Add CV button styles */
+        .cv-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            margin-left: 15px;
+            font-size: 0.9rem;
+            color: #333;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .cv-button:hover {
+            background-color: #f5f5f5;
+            border-color: #d0d0d0;
+            transform: translateY(-1px);
+        }
+
+        .cv-button i {
+            margin-right: 6px;
+            font-size: 0.9rem;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            margin-left: 15px;
+            font-size: 0.9rem;
+            color: #333;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-button:hover {
+            background-color: #f5f5f5;
+            border-color: #d0d0d0;
+            transform: translateY(-1px);
+        }
+
+        .contact-button i {
+            margin-right: 6px;
+            font-size: 0.9rem;
+        }
+
+        /* Project Detail Styles */
+        .project-hero {
+            height: 80vh;
+            position: relative;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .project-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            -webkit-font-smoothing: antialiased;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .project-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            color: #2C3E50;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .project-subtitle {
+            font-size: 1.8rem;
+            color: #2C3E50;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .project-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-label {
+            color: #2C3E50;
+            font-weight: 600;
+        }
+
+        .info-value {
+            color: #666;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            -webkit-font-smoothing: antialiased;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+        }
+
+        .lightbox-image {
+            max-width: 95%;
+            max-height: 95vh;
+            object-fit: contain;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.3s ease;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            -webkit-font-smoothing: antialiased;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .lightbox.active .lightbox-image {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 1002;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 1002;
+        }
+
+        .prev-image {
+            left: 20px;
+        }
+
+        .next-image {
+            right: 20px;
+        }
+
+        .image-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 1002;
+        }
+
+        /* More Projects Section Styles */
+        .more-projects {
+            padding: 60px 0;
+            background-color: #F8F9FB;
+            margin-top: 40px;
+            overflow: hidden;
+        }
+
+        .projects-strip {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .projects-strip::-webkit-scrollbar {
+            display: none;
+        }
+
+        .project-card {
+            flex: 0 0 200px;
+            text-decoration: none;
+            color: inherit;
+            perspective: 1000px;
+        }
+
+        .project-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 4/3;
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            -webkit-font-smoothing: antialiased;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 80, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .project-overlay h3 {
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05) translateZ(20px);
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-card:hover .project-overlay h3 {
+            transform: translateY(0);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #2C3E50;
+            margin: 40px 0 20px;
+            font-weight: 600;
+        }
+
+        /* Enhanced image quality */
+        img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: high-quality;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            will-change: transform;
+            image-rendering: auto;
+            image-rendering: smooth;
+        }
+
+        /* High DPI/Retina display support */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* Lazy loading styles */
+        img[data-src] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        img[data-src].loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <a href="index.html" class="logo">VANSH PORTFOLIO</a>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Work</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vansh-angiras-828275350" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/vansh_world" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="VANSH%20CV.png" download class="cv-button">
+                <i class="fas fa-download"></i>CV
+            </a>
+            <a href="contact.html" class="contact-button">
+                <i class="fas fa-envelope"></i>Contact
+            </a>
+        </div>
+    </header>
+
+    <nav class="nav-mobile">
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Work</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vansh-angiras-828275350" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/vansh_world" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="VANSH%20CV.png" download class="cv-button">
+                <i class="fas fa-download"></i>CV
+            </a>
+            <a href="contact.html" class="contact-button">
+                <i class="fas fa-envelope"></i>Contact
+            </a>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <img src="DESIGN%20VILLAGE/1.png" alt="Design Village Documentation">
+    </section>
+
+    <section class="project-content">
+        <h1 class="project-title">Documentation of Murthal Khas</h1>
+        <h2 class="project-subtitle">Village Documentation & Analysis</h2>
+        
+        <div class="project-info">
+            <div class="info-item">
+                <span class="info-label">Project Type</span>
+                <span class="info-value">Village Documentation</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Location</span>
+                <span class="info-value">Murthal Khas, Sonipat District, Haryana, India</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Semester</span>
+                <span class="info-value">4th Semester</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Project Nature</span>
+                <span class="info-value">Group Project</span>
+            </div>
+        </div>
+
+        <h3 class="section-title">Project Objective</h3>
+        <p class="project-description">
+            The primary objectives of this documentation project were:
+            <br>• To document and analyze the spatial and infrastructural elements of the village
+            <br>• To study the relationship between built environment and community lifestyle
+        </p>
+
+        <h3 class="section-title">Key Areas Studied</h3>
+        <p class="project-description">
+            • Housing Typologies: Layouts, materials, construction methods<br>
+            • Road Network: Hierarchy, widths, and circulation patterns<br>
+            • Water Supply: Sources, storage, and distribution<br>
+            • Electrical Supply: Infrastructure, accessibility, and coverage<br>
+            • Drainage Systems: Flow patterns, types, and challenges<br>
+            • Community Spaces: Public areas, religious and social zones<br>
+            • Socio-cultural Context: Daily life, traditions, and spatial usage
+        </p>
+
+        <h3 class="section-title">Skills Applied</h3>
+        <p class="project-description">
+            • On-site surveying and documentation<br>
+            • Technical drawing and analysis<br>
+            • Collaborative fieldwork and research
+        </p>
+
+        <h3 class="section-title">Documentation Gallery</h3>
+        <div class="project-gallery">
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/2.png" alt="Village Documentation 2">
+            </div>
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/3.png" alt="Village Documentation 3">
+            </div>
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/4.png" alt="Village Documentation 4">
+            </div>
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/5.png" alt="Village Documentation 5">
+            </div>
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/6.png" alt="Village Documentation 6">
+            </div>
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/7.png" alt="Village Documentation 7">
+            </div>
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/8.png" alt="Village Documentation 8">
+            </div>
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/9.png" alt="Village Documentation 9">
+            </div>
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/10.png" alt="Village Documentation 10">
+            </div>
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/11.png" alt="Village Documentation 11">
+            </div>
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/12.png" alt="Village Documentation 12">
+            </div>
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/13.png" alt="Village Documentation 13">
+            </div>
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/14.png" alt="Village Documentation 14">
+            </div>
+            <div class="gallery-item">
+                <img src="DESIGN%20VILLAGE/15.png" alt="Village Documentation 15">
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- More Projects Section -->
+    <section class="more-projects">
+        <div class="container">
+            <h2 class="section-title">More Projects</h2>
+            <div class="projects-strip">
+                <a href="energy-museum.html" class="project-card">
+                    <div class="project-image">
+                        <img src="ENERGY%20MUSEUM/1.png" alt="Energy Museum">
+                        <div class="project-overlay">
+                            <h3>Energy Museum</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="virasat-e-haryana.html" class="project-card">
+                    <div class="project-image">
+                        <img src="VIRASAT%20-%20E-%20HARYANA/RENDER%2014%20-2.jpg" alt="Virasat-E-Haryana">
+                        <div class="project-overlay">
+                            <h3>Virasat-E-Haryana</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="group-housing.html" class="project-card">
+                    <div class="project-image">
+                        <img src="GROUP%20HOUSING%20SHEETS/VIEW%201.png" alt="Group Housing">
+                        <div class="project-overlay">
+                            <h3>Group Housing</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="recreational-club.html" class="project-card">
+                    <div class="project-image">
+                        <img src="RECREATIONAL%20CLUB%20SHEETS/VIEW%201.jpg" alt="Recreational Club">
+                        <div class="project-overlay">
+                            <h3>Recreational Club</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="sports-arena.html" class="project-card">
+                    <div class="project-image">
+                        <img src="SPORTS%20ARENA/VIEW%201.png" alt="Sports Arena">
+                        <div class="project-overlay">
+                            <h3>Sports Arena</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="working-drawings.html" class="project-card">
+                    <div class="project-image">
+                        <img src="WORKING%20DRAWINGS/0.png" alt="Working Drawings">
+                        <div class="project-overlay">
+                            <h3>Working Drawings</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-nav prev-image"><i class="fas fa-chevron-left"></i></div>
+        <div class="lightbox-nav next-image"><i class="fas fa-chevron-right"></i></div>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-image">
+        </div>
+        <div class="image-counter">1 / 15</div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> VANSH PORTFOLIO</p>
+        </div>
+    </footer>
+
+    <script>
+        // Image quality enhancement
+        function enhanceImageQuality() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.setAttribute('loading', 'lazy');
+                img.setAttribute('decoding', 'async');
+                img.style.willChange = 'transform';
+                img.style.backfaceVisibility = 'hidden';
+                img.style.transform = 'translateZ(0)';
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            enhanceImageQuality();
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Lightbox functionality
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-image');
+        const closeBtn = document.querySelector('.close-lightbox');
+        const prevBtn = document.querySelector('.prev-image');
+        const nextBtn = document.querySelector('.next-image');
+        const counter = document.querySelector('.image-counter');
+        let currentImageIndex = 0;
+
+        function showImage(index) {
+            currentImageIndex = index;
+            const imgSrc = galleryItems[index].querySelector('img').src;
+            const imgAlt = galleryItems[index].querySelector('img').alt;
+            lightboxImg.src = imgSrc;
+            lightboxImg.alt = imgAlt;
+            counter.textContent = `${index + 1} / ${galleryItems.length}`;
+        }
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                lightbox.classList.add('active');
+                showImage(index);
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+            showImage(currentImageIndex);
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+            showImage(currentImageIndex);
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'ArrowLeft') {
+                currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+                showImage(currentImageIndex);
+            } else if (e.key === 'ArrowRight') {
+                currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+                showImage(currentImageIndex);
+            } else if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
+
+        <!-- Auto-refresh and cache-busting script -->
+        <script>
+            // Cache-busting function
+            function addCacheBuster() {
+                const timestamp = new Date().getTime();
+                const links = document.querySelectorAll('link[rel="stylesheet"]');
+                const scripts = document.querySelectorAll('script[src]');
+                const images = document.querySelectorAll('img[src]');
+                
+                // Add cache buster to CSS
+                links.forEach(link => {
+                    if (link.href && !link.href.includes('fonts.googleapis.com') && !link.href.includes('cdnjs.cloudflare.com')) {
+                        link.href = link.href + '?v=' + timestamp;
+                    }
+                });
+                
+                // Add cache buster to JS
+                scripts.forEach(script => {
+                    if (script.src && !script.src.includes('cdnjs.cloudflare.com')) {
+                        script.src = script.src + '?v=' + timestamp;
+                    }
+                });
+                
+                // Add cache buster to images
+                images.forEach(img => {
+                    if (img.src && !img.src.includes('data:')) {
+                        img.src = img.src + '?v=' + timestamp;
+                    }
+                });
+            }
+            
+            // Auto-refresh mechanism
+            function checkForUpdates() {
+                // Check if the page has been updated by comparing with a server timestamp
+                fetch(window.location.href + '?check=' + new Date().getTime(), {
+                    method: 'HEAD',
+                    cache: 'no-cache'
+                }).then(response => {
+                    const lastModified = response.headers.get('last-modified');
+                    if (lastModified && window.lastModifiedTime && lastModified !== window.lastModifiedTime) {
+                        // Page has been updated, refresh
+                        window.location.reload(true);
+                    }
+                    window.lastModifiedTime = lastModified;
+                }).catch(() => {
+                    // If fetch fails, just continue
+                });
+            }
+            
+            // Force refresh on page load
+            function forceRefresh() {
+                // Add timestamp to prevent caching
+                if (window.location.search.indexOf('v=') === -1) {
+                    const url = new URL(window.location);
+                    url.searchParams.set('v', new Date().getTime());
+                    window.history.replaceState({}, '', url);
+                }
+            }
+            
+            // Initialize on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                forceRefresh();
+                addCacheBuster();
+                
+                // Check for updates every 30 seconds
+                setInterval(checkForUpdates, 60000);
+                
+                // Force refresh every 5 minutes to ensure fresh content
+                setTimeout(() => {
+                    window.location.reload(true);
+                }, 600000); // 5 minutes
+            });
+            
+            // Override browser back/forward cache
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted) {
+                    window.location.reload(true);
+                }
+            });
+            
+            // Prevent caching of this page
+            window.addEventListener('beforeunload', function() {
+                // Clear any cached data
+                if ('caches' in window) {
+                    caches.keys().then(function(names) {
+                        names.forEach(function(name) {
+                            caches.delete(name);
+                        });
+                    });
+                }
+            });
+        </script>
+</body>
+</html> 
